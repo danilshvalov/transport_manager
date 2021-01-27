@@ -13,18 +13,25 @@ namespace MapDrawer {
 
 struct TextSettings {
   uint32_t font_size;
+  string font_family;
+  Svg::Color color;
   Svg::Point offset;
 };
 struct CircleSettings {
   double radius;
+  Svg::Color color;
 };
 struct UnderlayerSettings {
   double width;
   Svg::Color color;
+  string line_join;
+  string line_cap;
 };
 
 struct LineSettings {
   double line_width;
+  string line_join;
+  string line_cap;
 };
 
 struct MapSettings {
@@ -70,7 +77,7 @@ public:
   explicit Drawer(const Descriptions::BusesDict &buses_dict,
                   const Descriptions::StopsDict &stops_dict,
                   const Json::Dict &settings);
-  Drawer &DrawMap(std::ostream &os);
+  const Svg::Document& GetMap() const;
   Drawer &AddStopNames();
   Drawer &AddStopCircles();
   Drawer &AddBusLines();

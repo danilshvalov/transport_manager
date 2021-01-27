@@ -1,8 +1,5 @@
 #include "transport_manager.h"
 
-// TODO remove fstream
-#include <fstream>
-
 using namespace std;
 
 const TransportManager::Stop *
@@ -78,12 +75,15 @@ TransportManager::TransportManager(std::vector<Descriptions::InputQuery> data,
 
   map_drawer_ = std::make_unique<MapDrawer::Drawer>(buses_data, stops_data,
                                                     drawer_settings);
-  // TODO remove output
-  ofstream output("out.svg");
-  map_drawer_->AddBusLines().AddStopCircles().AddStopNames().DrawMap(output);
+
+  map_drawer_->AddBusLines().AddStopCircles().AddStopNames();
 }
 std::optional<TransportRouter::RouteInfo>
 TransportManager::FindRoute(const std::string &from,
                             const std::string &to) const {
   return transport_router_->FindRoute(from, to);
+}
+
+const Svg::Document &TransportManager::GetMap() const {
+  return map_drawer_->GetMap();
 }

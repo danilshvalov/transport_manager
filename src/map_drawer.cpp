@@ -111,68 +111,86 @@ void Drawer::InitSettings(const Json::Dict &settings) {
           {
               .font_size = static_cast<uint32_t>(
                   settings.at("stop_label_font_size").AsInt()),
+              .font_family = "Verdana",
+              .color = "black",
               .offset = ParseOffset(settings.at("stop_label_offset").AsArray()),
           },
-      .circle_settings =
-          {
-              .radius = settings.at("stop_radius").AsDouble(),
-          },
+      .circle_settings = {.radius = settings.at("stop_radius").AsDouble(),
+                          .color = "white"},
       .underlayer_settings = {.width =
                                   settings.at("underlayer_width").AsDouble(),
                               .color =
-                                  ParseColor(settings.at("underlayer_color"))},
-      .line_settings = {.line_width = settings.at("line_width").AsDouble()},
+                                  ParseColor(settings.at("underlayer_color")),
+                              .line_join = "round",
+                              .line_cap = "round"},
+      .line_settings = {.line_width = settings.at("line_width").AsDouble(),
+                        .line_join = "round",
+                        .line_cap = "round"},
       .color_palette =
           ParseColorPalette(settings.at("color_palette").AsArray())};
 }
 
 void Drawer::PrepareStops(const map<string, Svg::Point> &stop_points) {
-  Svg::Text text_blank;
-  const auto &text_settings = settings_.text_settings;
-  text_blank.SetFontSize(text_settings.font_size)
-      .SetOffset(text_settings.offset)
-      .SetFillColor("black")
-      .SetFontFamily("Verdana");
-
-  Svg::Circle circle_blank;
-  const auto &circle_settings = settings_.circle_settings;
-  circle_blank.SetRadius(circle_settings.radius);
-
   for (const auto &[stop_name, stop_point] : stop_points) {
-    texts_.push_back(text_blank.SetData(stop_name).SetPoint(stop_point));
-    circles_.push_back(circle_blank.SetCenter(stop_point));
+    Svg::Text text_blank;
+    text_blank.SetPoint(stop_point).SetData(stop_name);
+    ConfigureText(text_blank);
+
+    Svg::Text text_underlayer = text_blank;
+    ConfigureTextUnderlayer(text_underlayer);
+
+    texts_.push_back(move(text_underlayer));
+    texts_.push_back(move(text_blank));
+
+    Svg::Circle circle_blank;
+    circle_blank.SetCenter(stop_point);
+    ConfigureCircle(circle_blank);
+    circles_.push_back(move(circle_blank));
   }
 }
 
 void Drawer::PrepareBusLines(const map<string, Svg::Polyline> &bus_lines) {
   for (auto [_, bus_line] : bus_lines) {
-    polylines_.push_back(
-        bus_line.SetStrokeWidth(settings_.line_settings.line_width)
-            .SetStrokeLineCap("round")
-            .SetStrokeLineJoin("round"));
+    ConfigurePolyline(bus_line);
+    polylines_.push_back(move(bus_line));
   }
 }
 
-void Drawer::ConfigureCircle(Svg::Circle& circle) const
-{
-  const auto& circle_settings = settings_.circle_settings;
+void Drawer::ConfigureText(Svg::Text &text) const {
+  const auto &text_settings = settings_.text_settings;
 
-  circle.SetRadius(circle_settings.radius).SetFillColor();
+  text.SetFontFamily(text_settings.font_family)
+      .SetFontSize(text_settings.font_size)
+      .SetFillColor(text_settings.color)
+      .SetOffset(text_settings.offset);
+}
+
+void Drawer::ConfigureTextUnderlayer(Svg::Text &underlayer) const {
+  const auto &underlayer_settings = settings_.underlayer_settings;
+
+  underlayer.SetFillColor(underlayer_settings.color)
+      .SetStrokeColor(underlayer_settings.color)
+      .SetStrokeWidth(underlayer_settings.width)
+      .SetStrokeLineCap(underlayer_settings.line_cap)
+      .SetStrokeLineJoin(underlayer_settings.line_join);
+}
+
+void Drawer::ConfigureCircle(Svg::Circle &circle) const {
+  const auto &circle_settings = settings_.circle_settings;
+
+  circle.SetRadius(circle_settings.radius).SetFillColor(circle_settings.color);
 }
 
 void Drawer::ConfigurePolyline(Svg::Polyline &polyline) const {
-  const string line_cap = "round";
-  const string line_join = "round";
-  const auto& line_settings = settings_.line_settings;
+  const auto &line_settings = settings_.line_settings;
 
-  polyline.SetStrokeLineCap(line_cap)
-      .SetStrokeLineJoin(line_join)
+  polyline.SetStrokeLineCap(line_settings.line_cap)
+      .SetStrokeLineJoin(line_settings.line_join)
       .SetStrokeWidth(line_settings.line_width);
 }
 
-Drawer &Drawer::DrawMap(std::ostream &os) {
-  document_.Render(os);
-  return *this;
+const Svg::Document& Drawer::GetMap() const {
+  return document_;
 }
 
 Drawer &Drawer::AddBusLines() {
