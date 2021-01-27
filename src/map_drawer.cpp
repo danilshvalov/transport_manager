@@ -2,6 +2,7 @@
 
 // TODO remove test_runner.h
 #include "test_runner.h"
+#include <fstream>
 
 using namespace std;
 
@@ -189,7 +190,9 @@ void Drawer::ConfigurePolyline(Svg::Polyline &polyline) const {
       .SetStrokeWidth(line_settings.line_width);
 }
 
-const Svg::Document& Drawer::GetMap() const {
+const Svg::Document &Drawer::GetMap() const {
+  // ofstream out("out.svg");
+  // document_.Render(out);
   return document_;
 }
 

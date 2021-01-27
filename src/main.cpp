@@ -42,17 +42,18 @@ int main() {
 
   Descriptions::Tests::RunTests();
 
-  tr.RunTest(SimpleJSONTest, "SimpleJSON");
+  // tr.RunTest(SimpleJSONTest, "SimpleJSON");
   cout.precision(25);
 
-  //  auto document = Json::Load(std::cin);
-  //
-  //  auto json = document.GetRoot().AsMap();
-  //
-  //  TransportManager transport_manager(
-  //      Descriptions::ReadDescriptions(json["base_requests"].AsArray()),
-  //      json["routing_settings"].AsMap()
-  //  );
-  //  std::cout << Requests::ProcessAll(json["stat_requests"].AsArray(),
-  //  transport_manager) << std::endl;
+  auto document = Json::Load(std::cin);
+
+  auto json = document.GetRoot().AsMap();
+  TransportManager transport_manager(
+      Descriptions::ReadDescriptions(json["base_requests"].AsArray()),
+      json["routing_settings"].AsMap(), json["render_settings"].AsMap());
+
+  auto data =
+      Requests::ProcessAll(json["stat_requests"].AsArray(), transport_manager);
+
+  cout << data << endl;
 }

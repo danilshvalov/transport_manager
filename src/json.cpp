@@ -111,7 +111,7 @@ std::ostream &operator<<(ostream &os, const Node &nodes) {
   } else if (std::holds_alternative<std::map<std::string, Node>>(nodes)) {
     return os << nodes.AsMap();
   } else if (std::holds_alternative<std::string>(nodes)) {
-    return os << '\"' << nodes.AsString() << '\"';
+    return os << quoted(nodes.AsString());
   } else if (std::holds_alternative<std::vector<Json::Node>>(nodes)) {
     return os << nodes.AsArray();
   }

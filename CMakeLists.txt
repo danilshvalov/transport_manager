@@ -9,6 +9,8 @@ file(GLOB SOURCES "./src/*")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "-std=c++20 -Wall -Werror -fsanitize=address -fsanitize=leak -fsanitize=undefined")
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
+
 add_executable(transport-manager ${SOURCES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
