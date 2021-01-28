@@ -75,8 +75,6 @@ TransportManager::TransportManager(std::vector<Descriptions::InputQuery> data,
 
   map_drawer_ = std::make_unique<MapDrawer::Drawer>(buses_data, stops_data,
                                                     drawer_settings);
-
-  map_drawer_->AddBusLines().AddBusNames().AddStopCircles().AddStopNames();
 } 
 std::optional<TransportRouter::RouteInfo>
 TransportManager::FindRoute(const std::string &from,

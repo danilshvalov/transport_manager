@@ -8,13 +8,11 @@
 #include <unordered_map>
 #include <vector>
 
-
 #include "description.h"
 #include "map_drawer.h"
 #include "svg.h"
 #include "transport_router.h"
 #include "utils.h"
-
 
 namespace Responses {
 struct Bus {

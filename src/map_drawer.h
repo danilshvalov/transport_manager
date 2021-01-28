@@ -11,7 +11,6 @@
 
 namespace MapDrawer {
 
-
 struct LabelSettings {
   uint32_t font_size;
   string font_family;
@@ -47,8 +46,10 @@ struct MapSettings {
   UnderlayerSettings underlayer_settings;
   LineSettings line_settings;
   std::vector<Svg::Color> color_palette;
+  std::vector<std::string> layers;
 };
 
+std::vector<std::string> ParseLayers(const Json::Array &array);
 Svg::Color ParseColor(const Json::Node &node);
 std::vector<Svg::Color> ParseColorPalette(const Json::Array &dict);
 Svg::Point ParseOffset(const Json::Array &array);
@@ -65,13 +66,16 @@ private:
 
   void InitSettings(const Json::Dict &settings);
   void PrepareStops(const map<string, Svg::Point> &stop_points);
-  void PrepareBuses(const Descriptions::BusesDict &buses_dict, const map<string, Svg::Point> &stop_points);
-  void PrepareLabel(Svg::Text label, vector<Svg::Text>& container, const LabelSettings& label_settings);
+  void PrepareBuses(const Descriptions::BusesDict &buses_dict,
+                    const map<string, Svg::Point> &stop_points);
+  void PrepareLabel(Svg::Text label, vector<Svg::Text> &container,
+                    const LabelSettings &label_settings);
   void PrepareBusLine(Svg::Polyline line);
-  void ConfigureLabel(Svg::Text& label, const LabelSettings& label_settings);
-  void ConfigureTextUnderlayer(Svg::Text& underlayer) const;
-  void ConfigureStopCircle(Svg::Circle& circle) const;
-  void ConfigureBusLine(Svg::Polyline& polyline) const;
+  void ConfigureLabel(Svg::Text &label, const LabelSettings &label_settings);
+  void ConfigureTextUnderlayer(Svg::Text &underlayer) const;
+  void ConfigureStopCircle(Svg::Circle &circle) const;
+  void ConfigureBusLine(Svg::Polyline &polyline) const;
+  void ProcessLayers(const std::vector<std::string> &layers);
 
   std::map<std::string, Svg::Point>
   ParseStopPoints(const Descriptions::StopsDict &stops_dict);
@@ -81,7 +85,7 @@ public:
   explicit Drawer(const Descriptions::BusesDict &buses_dict,
                   const Descriptions::StopsDict &stops_dict,
                   const Json::Dict &settings);
-  const Svg::Document& GetMap() const;
+  const Svg::Document &GetMap() const;
   Drawer &AddStopNames();
   Drawer &AddStopCircles();
   Drawer &AddBusLines();

@@ -7,6 +7,16 @@ using namespace std;
 
 namespace MapDrawer {
 
+vector<string> ParseLayers(const Json::Array &array) {
+  vector<string> result;
+  result.reserve(array.size());
+
+  for (const auto &layer : array) {
+    result.push_back(layer.AsString());
+  }
+  return result;
+}
+
 Svg::Color ParseColor(const Json::Node &node) {
   if (node.IsString()) {
     return {node.AsString()};
@@ -75,6 +85,8 @@ Drawer::Drawer(const Descriptions::BusesDict &buses_dict,
 
   PrepareStops(stop_points);
   PrepareBuses(buses_dict, stop_points);
+
+  ProcessLayers(settings_.layers);
 }
 
 void Drawer::InitSettings(const Json::Dict &settings) {
@@ -107,7 +119,8 @@ void Drawer::InitSettings(const Json::Dict &settings) {
                         .line_join = "round",
                         .line_cap = "round"},
       .color_palette =
-          ParseColorPalette(settings.at("color_palette").AsArray())};
+          ParseColorPalette(settings.at("color_palette").AsArray()),
+      .layers = ParseLayers(settings.at("layers").AsArray())};
 }
 
 void Drawer::PrepareStops(const map<string, Svg::Point> &stop_points) {
@@ -151,7 +164,7 @@ void Drawer::PrepareBuses(const Descriptions::BusesDict &buses_dict,
 
     PrepareBusLine(move(line));
 
-    const auto& stop_list = bus->stop_list;
+    const auto &stop_list = bus->stop_list;
 
     if (!bus->is_roundtrip && stop_list.size() > 1 &&
         stop_list.front() != stop_list[stop_list.size() / 2]) {
@@ -214,6 +227,21 @@ void Drawer::ConfigureBusLine(Svg::Polyline &polyline) const {
   polyline.SetStrokeLineCap(line_settings.line_cap)
       .SetStrokeLineJoin(line_settings.line_join)
       .SetStrokeWidth(line_settings.line_width);
+}
+
+void Drawer::ProcessLayers(const std::vector<std::string> &layers) 
+{
+  for (const auto& layer : layers) {
+    if (layer == "bus_lines") {
+      AddBusLines();
+    } else if (layer == "bus_labels") {
+      AddBusNames();
+    } else if (layer == "stop_points") {
+      AddStopCircles();
+    } else if (layer == "stop_labels") {
+      AddStopNames();
+    }
+  }
 }
 
 const Svg::Document &Drawer::GetMap() const {
