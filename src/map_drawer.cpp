@@ -65,7 +65,7 @@ Drawer::ParseStopPoints(const Descriptions::StopsDict &stops_dict) {
   auto projector =
       Sphere::Projector(Range(stops_points.begin(), stops_points.end()),
                         settings_.width, settings_.height, settings_.padding);
-
+  
   map<string, Svg::Point> result;
 
   for (const auto &[_, stop] : stops_dict) {

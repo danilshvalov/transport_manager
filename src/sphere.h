@@ -1,8 +1,10 @@
 #pragma once
 
 #include <algorithm>
+#include <cassert>
 #include <cmath>
 #include <iostream>
+#include <unordered_map>
 
 #include "svg.h"
 #include "utils.h"
@@ -13,63 +15,72 @@ struct Point {
   double lat = 0;
   double lon = 0;
   friend std::ostream &operator<<(std::ostream &os, const Point &p);
-  friend bool operator==(const Point &lhs, const Point &rhs) {
-    return tie(lhs.lat, lhs.lon) == tie(rhs.lat, rhs.lon);
-  }
+  friend bool operator==(const Point &lhs, const Point &rhs);
+  struct Hasher {
+    size_t operator()(const Point &point) const {
+      return std::hash<double>()(point.lon) * std::hash<double>()(point.lat);
+    }
+  };
 };
 
-template <typename PointIt>
-class Projector {
- private:
-  double min_lon_ = 0;
-  double max_lat_ = 0;
+template <typename PointIt> class Projector {
+private:
   double padding_;
-  double zoom_coef_ = 0;
+  double height_;
+  double x_step_;
+  double y_step_;
 
- public:
+  using PointId = size_t;
+
+  struct PointInfo {
+    PointId lon_id = 0;
+    PointId lat_id = 0;
+  };
+
+  std::unordered_map<typename PointIt::value_type, PointInfo,
+                     typename PointIt::value_type::Hasher>
+      points_;
+
+public:
   Projector(const Range<PointIt> &points_range, double max_width,
             double max_height, double padding)
-      : padding_(padding) {
-    const auto [right_it, left_it] = std::minmax_element(
-        std::begin(points_range), std::end(points_range),
-        [](const auto &lhs, const auto &rhs) { return lhs.lat < rhs.lat; });
+      : padding_(padding), height_(max_height) {
+    vector<typename PointIt::value_type> lon_list(points_range.begin(),
+                                                  points_range.end());
+    sort(lon_list.begin(), lon_list.end(),
+         [](const auto &lhs, const auto &rhs) { return lhs.lon < rhs.lon; });
 
-    const auto [bottom_it, top_it] = std::minmax_element(
-        std::begin(points_range), std::end(points_range),
-        [](const auto &lhs, const auto &rhs) { return lhs.lon < rhs.lon; });
+    vector<typename PointIt::value_type> lat_list(points_range.begin(),
+                                                  points_range.end());
+    sort(lat_list.begin(), lat_list.end(),
+         [](const auto &lhs, const auto &rhs) { return lhs.lat < rhs.lat; });
 
-    const double max_lon = top_it->lon;
-    min_lon_ = bottom_it->lon;
+    PointId lon_id = 0;
+    PointId lat_id = 0;
 
-    max_lat_ = left_it->lat;
-    const double min_lat = right_it->lat;
-
-    std::optional<double> width_zoom_coef;
-    if (!IsZero(max_lon - min_lon_)) {
-      width_zoom_coef = (max_width - 2 * padding) / (max_lon - min_lon_);
+    for (size_t i = 1; i <= lon_list.size(); ++i) {
+      points_[lon_list[i - 1]].lon_id = lon_id;
+      points_[lat_list[i - 1]].lat_id = lat_id;
+      if (i != lon_list.size()) {
+        if (lon_list[i].lon != lon_list[i - 1].lon) {
+          ++lon_id;
+        }
+        if (lat_list[i].lat != lat_list[i - 1].lat) {
+          ++lat_id;
+        }
+      }
     }
 
-    std::optional<double> height_zoom_coef;
+    assert(lon_list.size() == points_.size());
 
-    if (!IsZero(max_lat_ - min_lat)) {
-      height_zoom_coef = (max_height - 2 * padding) / (max_lat_ - min_lat);
-    }
-
-    if (width_zoom_coef && height_zoom_coef) {
-      zoom_coef_ = std::min(*width_zoom_coef, *height_zoom_coef);
-    } else if (width_zoom_coef) {
-      zoom_coef_ = *width_zoom_coef;
-    } else if (height_zoom_coef) {
-      zoom_coef_ = *height_zoom_coef;
-    }
-    
+    x_step_ = (max_width - 2 * padding_) / (lon_id == 0 ? 1 : lon_id) ;
+    y_step_ = (max_height - 2 * padding_) / (lat_id == 0 ? 1 : lat_id);
   }
 
   Svg::Point GetPoint(const Point &point) {
-    return {
-        .x = (point.lon - min_lon_) * zoom_coef_ + padding_,
-        .y = (max_lat_ - point.lat) * zoom_coef_ + padding_,
-    };
+    const auto &point_ids = points_[point];
+    return {.x = point_ids.lon_id * x_step_ + padding_,
+            .y = height_ - padding_ - point_ids.lat_id * y_step_};
   }
 };
 
@@ -79,4 +90,4 @@ double ConvertToRadians(double degree);
 
 Point Parse(std::istream &is);
 
-}  // namespace Sphere
+} // namespace Sphere
