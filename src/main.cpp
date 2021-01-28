@@ -42,7 +42,7 @@ int main() {
 
   Descriptions::Tests::RunTests();
 
-  // tr.RunTest(SimpleJSONTest, "SimpleJSON");
+  tr.RunTest(SimpleJSONTest, "SimpleJSON");
   cout.precision(25);
 
   auto document = Json::Load(std::cin);

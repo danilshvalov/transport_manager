@@ -1,6 +1,9 @@
 #include "sphere.h"
 
 namespace Sphere {
+
+
+
 double CalcDistance(const Point &lhs, const Point &rhs) {
   return std::acos(std::sin(lhs.lat) * std::sin(rhs.lat) +
                    std::cos(lhs.lat) * std::cos(rhs.lat) *

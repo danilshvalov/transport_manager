@@ -3,13 +3,47 @@
 #include <algorithm>
 #include <map>
 #include <numeric>
+#include <unordered_map>
+#include <unordered_set>
 #include <vector>
+
 
 #include "description.h"
 #include "json.h"
 #include "svg.h"
 
 namespace MapDrawer {
+struct StopInfo {
+  std::string name;
+  Sphere::Point point;
+};
+
+bool IsAdjacentStops(const StopInfo &lhs, const StopInfo &rhs,
+                     const Descriptions::StopsDict &stops_dict);
+
+class Projector {
+private:
+  std::unordered_map<std::string, Svg::Point> stop_points_;
+
+  using PointId = size_t;
+
+  struct PointIds {
+    PointId lon_id = 1;
+    PointId lat_id = 1;
+  };
+
+  double x_step_;
+  double y_step_;
+
+  double width_;
+  double height_;
+  double padding_;
+
+public:
+  Projector(const Descriptions::StopsDict &stops_dict, double max_width,
+            double max_height, double padding);
+  Svg::Point GetPoint(const std::string &stop_name) const;
+};
 
 struct LabelSettings {
   uint32_t font_size;

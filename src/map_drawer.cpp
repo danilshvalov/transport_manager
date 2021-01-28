@@ -7,6 +7,136 @@ using namespace std;
 
 namespace MapDrawer {
 
+bool IsAdjacentStops(const StopInfo &lhs, const StopInfo &rhs,
+                     const Descriptions::StopsDict &stops_dict) {
+  return stops_dict.at(lhs.name)->distances.count(rhs.name) != 0 ||
+         stops_dict.at(rhs.name)->distances.count(lhs.name) != 0;
+}
+
+Projector::Projector(const Descriptions::StopsDict &stops_dict,
+                     double max_width, double max_height, double padding)
+    : width_(max_width), height_(max_height), padding_(padding) {
+  unordered_map<string, PointIds> stop_ids;
+
+  vector<StopInfo> lon_list = [&stops_dict]() {
+    vector<StopInfo> list;
+    list.reserve(stops_dict.size());
+    for (const auto &[_, stop] : stops_dict) {
+      list.push_back({stop->name, stop->position});
+    }
+    return list;
+  }();
+  vector<StopInfo> lat_list = lon_list;
+
+  sort(lon_list.begin(), lon_list.end(), [](const auto &lhs, const auto &rhs) {
+    return lhs.point.lon < rhs.point.lon;
+  });
+
+  sort(lat_list.begin(), lat_list.end(), [](const auto &lhs, const auto &rhs) {
+    return lhs.point.lat < rhs.point.lat;
+  });
+
+  vector<vector<StopInfo>> stops_lon;
+  vector<vector<StopInfo>> stops_lat;
+
+  PointId lon_id = 0;
+  PointId lat_id = 0;
+  for (size_t i = 1; i <= stops_dict.size(); ++i) {
+
+    stop_ids[lon_list[i - 1].name].lon_id = lon_id;
+    stop_ids[lat_list[i - 1].name].lat_id = lat_id;
+
+    if (i != stops_dict.size()) {
+
+      if (stops_lon.size() <= lon_id) {
+        stops_lon.push_back({lon_list[i - 1]});
+      } else {
+        stops_lon[lon_id].push_back(lon_list[i - 1]);
+      }
+
+      if (stops_lat.size() <= lat_id) {
+        stops_lat.push_back({lat_list[i - 1]});
+      } else {
+        stops_lat[lat_id].push_back(lat_list[i - 1]);
+      }
+
+      if (lon_list[i].point.lon != lon_list[i - 1].point.lon &&
+          any_of(stops_lon[lon_id].begin(), stops_lon[lon_id].end(),
+                 [&stops_dict, &lon_list, &i](const auto &stop) {
+                   return IsAdjacentStops(stop, lon_list[i], stops_dict);
+                 })) {
+        ++lon_id;
+      }
+      if (lat_list[i].point.lat != lat_list[i - 1].point.lat &&
+          any_of(stops_lat[lat_id].begin(), stops_lat[lat_id].end(),
+                 [&stops_dict, &lat_list, &i](const auto &stop) {
+                   return IsAdjacentStops(stop, lat_list[i], stops_dict);
+                 })) {
+        ++lat_id;
+      }
+    }
+
+    // if (i != stops_dict.size()) {
+    //   if (lon_list[i].point.lon != lon_list[i - 1].point.lon) {
+    //     ++lon_id;
+    //   }
+    //   if (lat_list[i].point.lat != lat_list[i - 1].point.lat) {
+    //     ++lat_id;
+    //   }
+    // }
+  }
+
+  // unordered_set<PointId> united_lon;
+  // unordered_set<PointId> united_lat;
+
+  // for (size_t i = 1; i < stops_lon.size(); ++i) {
+  //   for (const auto &current_stop : stops_lon[i]) {
+  //     if (all_of(stops_lon[i - 1].begin(), stops_lon[i - 1].end(),
+  //                [&current_stop, &stops_dict](const StopInfo &info) {
+  //                  return !IsAdjacentStops(info, current_stop, stops_dict);
+  //                })) {
+  //       united_lon.insert(i - 1);
+  //     }
+  //   }
+  // }
+
+  // for (size_t i = 1; i < stops_lat.size(); ++i) {
+  //   for (const auto &current_stop : stops_lat[i]) {
+  //     if (all_of(stops_lat[i - 1].begin(), stops_lat[i - 1].end(),
+  //                [&current_stop, &stops_dict](const StopInfo &info) {
+  //                  return !IsAdjacentStops(info, current_stop, stops_dict);
+  //                })) {
+  //       united_lat.insert(i - 1);
+  //     }
+  //   }
+  // }
+
+  // size_t lon_count = stops_lon.size() - united_lon.size() - 1;
+  // size_t lat_count = stops_lat.size() - united_lat.size() - 1;
+
+  x_step_ = (width_ - 2 * padding_) / (lon_id == 0 ? 1 : lon_id);
+  y_step_ = (height_ - 2 * padding_) / (lat_id == 0 ? 1 : lat_id);
+
+  // lon_id = 0;
+  // lat_id = 0;
+  // for (size_t idx = 0; idx < stops_lon.size(); ++idx) {
+  //   stop_points_[]
+  //   if (united_lon.count(idx) == 0) {
+  //     ++lon_id;
+  //   }
+  // }
+
+  for (const auto &[_, stop] : stops_dict) {
+    stop_points_[stop->name] = Svg::Point{
+        .x = stop_ids[stop->name].lon_id * x_step_ + padding_,
+        .y = height_ - padding_ - stop_ids[stop->name].lat_id * y_step_};
+  }
+}
+
+Svg::Point Projector::GetPoint(const std::string &stop_name) const {
+  return stop_points_.at(stop_name);
+}
+
 vector<string> ParseLayers(const Json::Array &array) {
   vector<string> result;
   result.reserve(array.size());
@@ -55,24 +185,24 @@ Svg::Point ParseOffset(const Json::Array &array) {
 
 map<string, Svg::Point>
 Drawer::ParseStopPoints(const Descriptions::StopsDict &stops_dict) {
-  vector<Sphere::Point> stops_points;
-  stops_points.reserve(stops_dict.size());
+  // vector<Sphere::Point> stops_points;
+  // stops_points.reserve(stops_dict.size());
 
-  for (const auto &[_, stop] : stops_dict) {
-    stops_points.push_back(stop->position);
-  }
+  // for (const auto &[_, stop] : stops_dict) {
+  //   stops_points.push_back(stop->position);
+  // }
 
-  auto projector =
-      Sphere::Projector(Range(stops_points.begin(), stops_points.end()),
-                        settings_.width, settings_.height, settings_.padding);
-  
+  auto projector = Projector(stops_dict, settings_.width, settings_.height,
+                             settings_.padding);
+
   map<string, Svg::Point> result;
 
   for (const auto &[_, stop] : stops_dict) {
-    result.insert({stop->name, projector.GetPoint(stop->position)});
+    result.insert({stop->name, projector.GetPoint(stop->name)});
   }
 
   return result;
+  // return {};
 }
 
 Drawer::Drawer(const MapSettings &settings) : settings_(settings) {}
@@ -229,9 +359,8 @@ void Drawer::ConfigureBusLine(Svg::Polyline &polyline) const {
       .SetStrokeWidth(line_settings.line_width);
 }
 
-void Drawer::ProcessLayers(const std::vector<std::string> &layers) 
-{
-  for (const auto& layer : layers) {
+void Drawer::ProcessLayers(const std::vector<std::string> &layers) {
+  for (const auto &layer : layers) {
     if (layer == "bus_lines") {
       AddBusLines();
     } else if (layer == "bus_labels") {
@@ -245,8 +374,8 @@ void Drawer::ProcessLayers(const std::vector<std::string> &layers)
 }
 
 const Svg::Document &Drawer::GetMap() const {
-  // ofstream out("out.svg");
-  // document_.Render(out);
+  ofstream out("out.svg");
+  document_.Render(out);
   return document_;
 }
 
