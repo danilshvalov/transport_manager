@@ -4,12 +4,12 @@ using namespace std;
 
 const TransportManager::Stop *
 TransportManager::GetStop(const std::string &name) const {
-  return GetValuePointer(stops, name);
+  return GetValuePointer(stops_, name);
 }
 
 const TransportManager::Bus *
 TransportManager::GetBus(const std::string &name) const {
-  return GetValuePointer(buses, name);
+  return GetValuePointer(buses_, name);
 }
 double TransportManager::ComputeRouteLength(
     const std::vector<std::string> &stop_list,
@@ -45,7 +45,7 @@ TransportManager::TransportManager(std::vector<Descriptions::InputQuery> data,
   for (const auto &desc : Range(std::begin(data), stops_end)) {
     const auto &stop = std::get<Descriptions::Stop>(desc);
     stops_data[stop.name] = &stop;
-    stops.insert({stop.name, {}});
+    stops_.insert({stop.name, {}});
   }
 
   Descriptions::BusesDict buses_data;
@@ -53,17 +53,17 @@ TransportManager::TransportManager(std::vector<Descriptions::InputQuery> data,
   for (const auto &desc : Range(stops_end, std::end(data))) {
     const auto &bus = std::get<Descriptions::Bus>(desc);
     buses_data[bus.name] = &bus;
-    buses.insert(
+    buses_.insert(
         {bus.name,
          Bus{.route_length = ComputeRouteLength(bus.stop_list, stops_data),
              .stop_count = bus.stop_list.size(),
              .unique_stop_count =
                  ComputeUniqueItemsCount(AsRange(bus.stop_list))}});
-    buses[bus.name].curvature = buses[bus.name].route_length * 1.0 /
+    buses_[bus.name].curvature = buses_[bus.name].route_length * 1.0 /
                                 ComputeRouteDistance(bus.stop_list, stops_data);
 
     for (const auto &stop : bus.stop_list) {
-      stops[stop].buses.insert(bus.name);
+      stops_[stop].buses.insert(bus.name);
     }
   }
 
@@ -76,8 +76,8 @@ TransportManager::TransportManager(std::vector<Descriptions::InputQuery> data,
   map_drawer_ = std::make_unique<MapDrawer::Drawer>(buses_data, stops_data,
                                                     drawer_settings);
 
-  map_drawer_->AddBusLines().AddStopCircles().AddStopNames();
-}
+  map_drawer_->AddBusLines().AddBusNames().AddStopCircles().AddStopNames();
+} 
 std::optional<TransportRouter::RouteInfo>
 TransportManager::FindRoute(const std::string &from,
                             const std::string &to) const {

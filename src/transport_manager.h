@@ -42,8 +42,8 @@ private:
       const std::vector<std::string> &stop_list,
       std::unordered_map<std::string, const Descriptions::Stop *> &stops_info);
 
-  std::unordered_map<std::string, Bus> buses;
-  std::unordered_map<std::string, Stop> stops;
+  std::unordered_map<std::string, Bus> buses_;
+  std::unordered_map<std::string, Stop> stops_;
   std::unique_ptr<TransportRouter> transport_router_;
   std::unique_ptr<MapDrawer::Drawer> map_drawer_;
 

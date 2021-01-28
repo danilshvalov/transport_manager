@@ -11,12 +11,15 @@
 
 namespace MapDrawer {
 
-struct TextSettings {
+
+struct LabelSettings {
   uint32_t font_size;
   string font_family;
   Svg::Color color;
   Svg::Point offset;
+  bool is_bold;
 };
+
 struct CircleSettings {
   double radius;
   Svg::Color color;
@@ -38,7 +41,8 @@ struct MapSettings {
   double width;
   double height;
   double padding;
-  TextSettings text_settings;
+  LabelSettings stop_label_settings;
+  LabelSettings bus_label_settings;
   CircleSettings circle_settings;
   UnderlayerSettings underlayer_settings;
   LineSettings line_settings;
@@ -52,25 +56,25 @@ Svg::Point ParseOffset(const Json::Array &array);
 class Drawer {
 public:
 private:
-  std::vector<Svg::Circle> circles_;
-  std::vector<Svg::Text> texts_;
-  std::vector<Svg::Polyline> polylines_;
+  std::vector<Svg::Circle> stop_circles_;
+  std::vector<Svg::Text> stop_names_;
+  std::vector<Svg::Polyline> bus_lines_;
+  std::vector<Svg::Text> bus_names_;
   MapSettings settings_;
   Svg::Document document_;
 
   void InitSettings(const Json::Dict &settings);
   void PrepareStops(const map<string, Svg::Point> &stop_points);
-  void PrepareBusLines(const map<string, Svg::Polyline> &bus_lines);
-  void ConfigureText(Svg::Text& text) const;
+  void PrepareBuses(const Descriptions::BusesDict &buses_dict, const map<string, Svg::Point> &stop_points);
+  void PrepareLabel(Svg::Text label, vector<Svg::Text>& container, const LabelSettings& label_settings);
+  void PrepareBusLine(Svg::Polyline line);
+  void ConfigureLabel(Svg::Text& label, const LabelSettings& label_settings);
   void ConfigureTextUnderlayer(Svg::Text& underlayer) const;
-  void ConfigureCircle(Svg::Circle& circle) const;
-  void ConfigurePolyline(Svg::Polyline& polyline) const;
+  void ConfigureStopCircle(Svg::Circle& circle) const;
+  void ConfigureBusLine(Svg::Polyline& polyline) const;
 
   std::map<std::string, Svg::Point>
   ParseStopPoints(const Descriptions::StopsDict &stops_dict);
-  std::map<std::string, Svg::Polyline>
-  ParseBuses(const Descriptions::BusesDict &buses_dict,
-             const map<string, Svg::Point> &stop_points);
 
 public:
   explicit Drawer(const MapSettings &settings);
@@ -81,6 +85,7 @@ public:
   Drawer &AddStopNames();
   Drawer &AddStopCircles();
   Drawer &AddBusLines();
+  Drawer &AddBusNames();
 };
 
 std::map<std::string, Svg::Point>

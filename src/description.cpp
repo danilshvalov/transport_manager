@@ -1,23 +1,26 @@
 #include "description.h"
 
 namespace Descriptions {
-std::unordered_map<std::string, double> ParseRoadDistances(const Json::Dict &distances) {
+std::unordered_map<std::string, double>
+ParseRoadDistances(const Json::Dict &distances) {
   return {distances.begin(), distances.end()};
 }
 
 Stop Stop::ParseFrom(const Json::Dict &input) {
   return Stop{
       .name = input.at("name").AsString(),
-      .position = Sphere::Point{Sphere::ConvertToRadians(input.at("latitude").AsDouble()),
-                                Sphere::ConvertToRadians(input.at("longitude").AsDouble())},
-      .distances = ParseRoadDistances(input.at("road_distances").AsMap())
-  };
+      .position =
+          Sphere::Point{
+              Sphere::ConvertToRadians(input.at("latitude").AsDouble()),
+              Sphere::ConvertToRadians(input.at("longitude").AsDouble())},
+      .distances = ParseRoadDistances(input.at("road_distances").AsMap())};
 }
 
 Bus Bus::ParseFrom(const Json::Dict &input) {
   return Bus{.name = input.at("name").AsString(),
-      .stop_list = ParseStops(input.at("stops").AsArray(),
-                              input.at("is_roundtrip").AsBool())};
+             .stop_list = ParseStops(input.at("stops").AsArray(),
+                                     input.at("is_roundtrip").AsBool()),
+             .is_roundtrip = input.at("is_roundtrip").AsBool()};
 }
 InputQuery ParseDescription(const Json::Dict &input) {
   if (auto type = input.at("type").AsString(); type == "Bus") {
@@ -43,7 +46,8 @@ double ComputeStopDistance(const Stop &lhs, const Stop &rhs) {
     return rhs.distances.at(lhs.name);
   }
 }
-std::vector<std::string> ParseStops(const std::vector<Json::Node> &stop_list, bool is_roundtrip) {
+std::vector<std::string> ParseStops(const std::vector<Json::Node> &stop_list,
+                                    bool is_roundtrip) {
   std::vector<std::string> result;
   result.reserve((is_roundtrip ? stop_list.size() : stop_list.size() * 2 - 1));
 
@@ -59,4 +63,4 @@ std::vector<std::string> ParseStops(const std::vector<Json::Node> &stop_list, bo
 
   return result;
 }
-}
+} // namespace Descriptions

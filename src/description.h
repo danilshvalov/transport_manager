@@ -23,6 +23,7 @@ struct Stop {
 struct Bus {
   std::string name;
   std::vector<std::string> stop_list;
+  bool is_roundtrip;
 
   static Bus ParseFrom(const Json::Dict &input);
 };

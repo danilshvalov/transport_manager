@@ -1,12 +1,13 @@
 #pragma once
 
 #include <iostream>
+#include <memory>
 #include <optional>
 #include <string>
 #include <utility>
 #include <variant>
 #include <vector>
-#include <memory>
+
 
 #include "json.h"
 
@@ -43,14 +44,13 @@ void RenderColor(ostream &out, Rgba rgba);
 void RenderColor(ostream &out, const Color &color);
 
 class Object {
- public:
+public:
   virtual void Render(ostream &out) const = 0;
   virtual ~Object() = default;
 };
 
-template<typename Owner>
-class PathProps {
- public:
+template <typename Owner> class PathProps {
+public:
   Owner &SetFillColor(const Color &color);
   Owner &SetStrokeColor(const Color &color);
   Owner &SetStrokeWidth(double value);
@@ -58,7 +58,7 @@ class PathProps {
   Owner &SetStrokeLineJoin(const string &value);
   void RenderAttrs(ostream &out) const;
 
- private:
+private:
   Color fill_color_;
   Color stroke_color_;
   double stroke_width_ = 1.0;
@@ -69,89 +69,89 @@ class PathProps {
 };
 
 class Circle : public Object, public PathProps<Circle> {
- public:
+public:
   Circle &SetCenter(Point point);
   Circle &SetRadius(double radius);
   void Render(ostream &out) const override;
 
- private:
+private:
   Point center_;
   double radius_ = 1;
 };
 
 class Polyline : public Object, public PathProps<Polyline> {
- public:
+public:
   Polyline &AddPoint(Point point);
   void Render(ostream &out) const override;
 
- private:
+private:
   vector<Point> points_;
 };
 
 class Text : public Object, public PathProps<Text> {
- public:
+public:
   Text &SetPoint(Point point);
   Text &SetOffset(Point point);
   Text &SetFontSize(uint32_t size);
   Text &SetFontFamily(const string &value);
   Text &SetData(const string &data);
+  Text &SetBold(bool is_bold);
   void Render(ostream &out) const override;
 
- private:
+private:
   Point point_;
   Point offset_;
   uint32_t font_size_ = 1;
   optional<string> font_family_;
+  bool is_bold_ = false;
   string data_;
 };
 
 class Document : public Object {
- public:
-  template<typename ObjectType>
-  void Add(ObjectType object);
+public:
+  template <typename ObjectType> void Add(ObjectType object);
 
   void Render(ostream &out) const override;
 
- private:
+private:
   vector<unique_ptr<Object>> objects_;
 };
 
-template<typename Owner>
-Owner &PathProps<Owner>::AsOwner() {
+template <typename Owner> Owner &PathProps<Owner>::AsOwner() {
   return static_cast<Owner &>(*this);
 }
 
-template<typename Owner>
+template <typename Owner>
 Owner &PathProps<Owner>::SetFillColor(const Color &color) {
   fill_color_ = color;
   return AsOwner();
 }
 
-template<typename Owner>
+template <typename Owner>
 Owner &PathProps<Owner>::SetStrokeColor(const Color &color) {
   stroke_color_ = color;
   return AsOwner();
 }
 
-template<typename Owner>
+template <typename Owner>
 Owner &PathProps<Owner>::SetStrokeWidth(double value) {
   stroke_width_ = value;
   return AsOwner();
 }
 
-template<typename Owner>
+template <typename Owner>
 Owner &PathProps<Owner>::SetStrokeLineCap(const string &value) {
   stroke_line_cap_ = value;
   return AsOwner();
 }
 
-template<typename Owner>
+template <typename Owner>
 Owner &PathProps<Owner>::SetStrokeLineJoin(const string &value) {
   stroke_line_join_ = value;
   return AsOwner();
 }
 
-template<typename Owner>
+template <typename Owner>
 void PathProps<Owner>::RenderAttrs(ostream &out) const {
   out << "fill=\"";
   RenderColor(out, fill_color_);
@@ -168,9 +168,8 @@ void PathProps<Owner>::RenderAttrs(ostream &out) const {
   }
 }
 
-template<typename ObjectType>
-void Document::Add(ObjectType object) {
+template <typename ObjectType> void Document::Add(ObjectType object) {
   objects_.push_back(make_unique<ObjectType>(move(object)));
 }
 
-}
+} // namespace Svg

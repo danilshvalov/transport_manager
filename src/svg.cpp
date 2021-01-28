@@ -2,26 +2,20 @@
 
 namespace Svg {
 
-void RenderColor(ostream &out, monostate) {
-  out << "none";
-}
-void RenderColor(ostream &out, const string &value) {
-  out << value;
-}
+void RenderColor(ostream &out, monostate) { out << "none"; }
+void RenderColor(ostream &out, const string &value) { out << value; }
 void RenderColor(ostream &out, Rgb rgb) {
-  out << "rgb(" << static_cast<int>(rgb.red)
-      << "," << static_cast<int>(rgb.green)
-      << "," << static_cast<int>(rgb.blue) << ")";
+  out << "rgb(" << static_cast<int>(rgb.red) << ","
+      << static_cast<int>(rgb.green) << "," << static_cast<int>(rgb.blue)
+      << ")";
 }
 void RenderColor(ostream &out, Rgba rgba) {
-  out << "rgba(" << static_cast<int>(rgba.red)
-      << "," << static_cast<int>(rgba.green)
-      << "," << static_cast<int>(rgba.blue)
+  out << "rgba(" << static_cast<int>(rgba.red) << ","
+      << static_cast<int>(rgba.green) << "," << static_cast<int>(rgba.blue)
       << "," << rgba.alpha << ")";
 }
 void RenderColor(ostream &out, const Color &color) {
-  visit([&out](const auto &value) { RenderColor(out, value); },
-        color);
+  visit([&out](const auto &value) { RenderColor(out, value); }, color);
 }
 
 Circle &Circle::SetCenter(Point point) {
@@ -90,6 +84,11 @@ Text &Text::SetData(const string &data) {
   return *this;
 }
 
+Text &Text::SetBold(bool is_bold) {
+  is_bold_ = is_bold;
+  return *this;
+}
+
 void Text::Render(ostream &out) const {
   out << "<text ";
   out << "x=\"" << point_.x << "\" ";
@@ -99,6 +98,9 @@ void Text::Render(ostream &out) const {
   out << "font-size=\"" << font_size_ << "\" ";
   if (font_family_) {
     out << "font-family=\"" << *font_family_ << "\" ";
+  }
+  if (is_bold_) {
+    out << "font-weight=\"bold\" ";
   }
   PathProps::RenderAttrs(out);
   out << ">";
@@ -115,4 +117,4 @@ void Document::Render(ostream &out) const {
   out << "</svg>";
 }
 
-}
+} // namespace Svg

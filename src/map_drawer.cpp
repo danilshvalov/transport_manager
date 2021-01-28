@@ -1,7 +1,6 @@
 #include "map_drawer.h"
 
-// TODO remove test_runner.h
-#include "test_runner.h"
+// TODO fstream
 #include <fstream>
 
 using namespace std;
@@ -66,30 +65,6 @@ Drawer::ParseStopPoints(const Descriptions::StopsDict &stops_dict) {
   return result;
 }
 
-map<string, Svg::Polyline>
-Drawer::ParseBuses(const Descriptions::BusesDict &buses_dict,
-                   const map<string, Svg::Point> &stop_points) {
-  map<string, Svg::Polyline> result;
-
-  for (const auto &[_, bus] : buses_dict) {
-    Svg::Polyline line;
-    for (const auto &stop : bus->stop_list) {
-      line.AddPoint(stop_points.at(stop));
-    }
-
-    result.insert({bus->name, line});
-  }
-
-  size_t color_idx = 0;
-
-  for (auto &[_, bus_line] : result) {
-    bus_line.SetStrokeColor(settings_.color_palette[color_idx]);
-    color_idx = (color_idx + 1) % (settings_.color_palette.size());
-  }
-
-  return result;
-}
-
 Drawer::Drawer(const MapSettings &settings) : settings_(settings) {}
 Drawer::Drawer(const Descriptions::BusesDict &buses_dict,
                const Descriptions::StopsDict &stops_dict,
@@ -97,10 +72,9 @@ Drawer::Drawer(const Descriptions::BusesDict &buses_dict,
   InitSettings(settings);
 
   auto stop_points = ParseStopPoints(stops_dict);
-  auto bus_lines = ParseBuses(buses_dict, stop_points);
 
   PrepareStops(stop_points);
-  PrepareBusLines(bus_lines);
+  PrepareBuses(buses_dict, stop_points);
 }
 
 void Drawer::InitSettings(const Json::Dict &settings) {
@@ -108,14 +82,19 @@ void Drawer::InitSettings(const Json::Dict &settings) {
       .width = settings.at("width").AsDouble(),
       .height = settings.at("height").AsDouble(),
       .padding = settings.at("padding").AsDouble(),
-      .text_settings =
-          {
-              .font_size = static_cast<uint32_t>(
-                  settings.at("stop_label_font_size").AsInt()),
-              .font_family = "Verdana",
-              .color = "black",
-              .offset = ParseOffset(settings.at("stop_label_offset").AsArray()),
-          },
+      .stop_label_settings = {.font_size = static_cast<uint32_t>(
+                                  settings.at("stop_label_font_size").AsInt()),
+                              .font_family = "Verdana",
+                              .color = "black",
+                              .offset = ParseOffset(
+                                  settings.at("stop_label_offset").AsArray()),
+                              .is_bold = false},
+      .bus_label_settings = {.font_size = static_cast<uint32_t>(
+                                 settings.at("bus_label_font_size").AsInt()),
+                             .font_family = "Verdana",
+                             .offset = ParseOffset(
+                                 settings.at("bus_label_offset").AsArray()),
+                             .is_bold = true},
       .circle_settings = {.radius = settings.at("stop_radius").AsDouble(),
                           .color = "white"},
       .underlayer_settings = {.width =
@@ -132,38 +111,85 @@ void Drawer::InitSettings(const Json::Dict &settings) {
 }
 
 void Drawer::PrepareStops(const map<string, Svg::Point> &stop_points) {
+  const auto &stop_label_settings = settings_.stop_label_settings;
+
   for (const auto &[stop_name, stop_point] : stop_points) {
-    Svg::Text text_blank;
-    text_blank.SetPoint(stop_point).SetData(stop_name);
-    ConfigureText(text_blank);
+    Svg::Text text;
+    text.SetPoint(stop_point).SetData(stop_name);
+    PrepareLabel(move(text), stop_names_, stop_label_settings);
 
-    Svg::Text text_underlayer = text_blank;
-    ConfigureTextUnderlayer(text_underlayer);
-
-    texts_.push_back(move(text_underlayer));
-    texts_.push_back(move(text_blank));
-
-    Svg::Circle circle_blank;
-    circle_blank.SetCenter(stop_point);
-    ConfigureCircle(circle_blank);
-    circles_.push_back(move(circle_blank));
+    Svg::Circle circle;
+    circle.SetCenter(stop_point);
+    ConfigureStopCircle(circle);
+    stop_circles_.push_back(move(circle));
   }
 }
 
-void Drawer::PrepareBusLines(const map<string, Svg::Polyline> &bus_lines) {
-  for (auto [_, bus_line] : bus_lines) {
-    ConfigurePolyline(bus_line);
-    polylines_.push_back(move(bus_line));
+void Drawer::PrepareBuses(const Descriptions::BusesDict &buses_dict,
+                          const map<string, Svg::Point> &stop_points) {
+
+  vector<pair<string, const Descriptions::Bus *>> buses_list(buses_dict.begin(),
+                                                             buses_dict.end());
+  sort(buses_list.begin(), buses_list.end());
+
+  const auto &bus_label_settings = settings_.bus_label_settings;
+
+  size_t color_idx = 0;
+
+  for (const auto &[_, bus] : buses_list) {
+    Svg::Polyline line;
+    for (const auto &stop : bus->stop_list) {
+      line.AddPoint(stop_points.at(stop));
+    }
+
+    Svg::Text name;
+    name.SetData(bus->name);
+
+    line.SetStrokeColor(settings_.color_palette[color_idx]);
+    name.SetFillColor(settings_.color_palette[color_idx]);
+    color_idx = (color_idx + 1) % (settings_.color_palette.size());
+
+    PrepareBusLine(move(line));
+
+    const auto& stop_list = bus->stop_list;
+
+    if (!bus->is_roundtrip && stop_list.size() > 1 &&
+        stop_list.front() != stop_list[stop_list.size() / 2]) {
+      name.SetPoint(stop_points.at(stop_list.front()));
+      PrepareLabel(name, bus_names_, bus_label_settings);
+      name.SetPoint(stop_points.at(stop_list[stop_list.size() / 2]));
+      PrepareLabel(move(name), bus_names_, bus_label_settings);
+    } else {
+      name.SetPoint(stop_points.at(stop_list.front()));
+      PrepareLabel(move(name), bus_names_, bus_label_settings);
+    }
   }
 }
 
-void Drawer::ConfigureText(Svg::Text &text) const {
-  const auto &text_settings = settings_.text_settings;
+void Drawer::PrepareLabel(Svg::Text label, vector<Svg::Text> &container,
+                          const LabelSettings &label_settings) {
+  ConfigureLabel(label, label_settings);
+  Svg::Text underlayer = label;
+  ConfigureTextUnderlayer(underlayer);
+  container.push_back(move(underlayer));
+  container.push_back(move(label));
+}
 
-  text.SetFontFamily(text_settings.font_family)
-      .SetFontSize(text_settings.font_size)
-      .SetFillColor(text_settings.color)
-      .SetOffset(text_settings.offset);
+void Drawer::PrepareBusLine(Svg::Polyline line) {
+  ConfigureBusLine(line);
+  bus_lines_.push_back(move(line));
+}
+
+void Drawer::ConfigureLabel(Svg::Text &label,
+                            const LabelSettings &label_settings) {
+  label.SetFontFamily(label_settings.font_family)
+      .SetFontSize(label_settings.font_size)
+      .SetOffset(label_settings.offset)
+      .SetBold(label_settings.is_bold);
+
+  if (!holds_alternative<monostate>(label_settings.color)) {
+    label.SetFillColor(label_settings.color);
+  }
 }
 
 void Drawer::ConfigureTextUnderlayer(Svg::Text &underlayer) const {
@@ -176,13 +202,13 @@ void Drawer::ConfigureTextUnderlayer(Svg::Text &underlayer) const {
       .SetStrokeLineJoin(underlayer_settings.line_join);
 }
 
-void Drawer::ConfigureCircle(Svg::Circle &circle) const {
+void Drawer::ConfigureStopCircle(Svg::Circle &circle) const {
   const auto &circle_settings = settings_.circle_settings;
 
   circle.SetRadius(circle_settings.radius).SetFillColor(circle_settings.color);
 }
 
-void Drawer::ConfigurePolyline(Svg::Polyline &polyline) const {
+void Drawer::ConfigureBusLine(Svg::Polyline &polyline) const {
   const auto &line_settings = settings_.line_settings;
 
   polyline.SetStrokeLineCap(line_settings.line_cap)
@@ -197,22 +223,28 @@ const Svg::Document &Drawer::GetMap() const {
 }
 
 Drawer &Drawer::AddBusLines() {
-  for (const auto &line : polylines_) {
+  for (const auto &line : bus_lines_) {
     document_.Add(line);
   }
   return *this;
 }
 
 Drawer &Drawer::AddStopCircles() {
-  for (const auto &circle : circles_) {
+  for (const auto &circle : stop_circles_) {
     document_.Add(circle);
   }
+  return *this;
+}
 
+Drawer &Drawer::AddBusNames() {
+  for (const auto &text : bus_names_) {
+    document_.Add(text);
+  }
   return *this;
 }
 
 Drawer &Drawer::AddStopNames() {
-  for (const auto &text : texts_) {
+  for (const auto &text : stop_names_) {
     document_.Add(text);
   }
   return *this;
