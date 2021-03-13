@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="transport-manager"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/dev/projects/cpp/transport_manager/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="transport-manager">
+				<Option output="C:/dev/projects/cpp/transport_manager/bin/transport-manager.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/cpp/transport_manager/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions/errors"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/json"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/requests"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/requests/errors"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/responses"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/routing"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/svg"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/utils"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/transport"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json/errors"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 transport-manager"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="transport-manager/fast">
+				<Option output="C:/dev/projects/cpp/transport_manager/bin/transport-manager.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/cpp/transport_manager/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions/errors"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/json"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/requests"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/requests/errors"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/responses"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/routing"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/svg"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/utils"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/transport"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json/errors"/>
+					<Add directory="C:/dev/projects/cpp/transport_manager/src"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 transport-manager/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package">
+				<Option working_dir="C:/dev/projects/cpp/transport_manager/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 package"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package_source">
+				<Option working_dir="C:/dev/projects/cpp/transport_manager/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 package_source"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/dev/projects/cpp/transport_manager/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/dev/projects/cpp/transport_manager/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\cpp\transport_manager\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/configuration.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/configuration.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/json">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/json/configuration_json.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/json/configuration_json.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/json/errors">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/json/errors/configuration_json_errors.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/configuration/json/errors/configuration_json_errors.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/description_tests.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/description_tests.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/errors">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/errors/descriptions_errors.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/errors/descriptions_errors.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/graph.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/json.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/json.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/main.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/map_drawer.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/map_drawer.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/profile.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/errors">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/errors/requests_errors.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/errors/requests_errors.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests_json_visitor.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests_json_visitor.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests_tests.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests_tests.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/responses">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/responses/responses.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/responses/responses.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/responses/responses_json_visitor.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/responses/responses_json_visitor.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/router.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/routing">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/sphere.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/sphere.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/svg">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/svg/svg.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/svg/svg.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/test_runner.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/transport">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/transport_manager.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/transport_manager.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/transport_router.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/transport_router.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/utils">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/utils/utils.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/utils/utils.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

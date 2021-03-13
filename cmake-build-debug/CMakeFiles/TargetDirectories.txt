@@ -1,0 +1,5 @@
+C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/transport-manager.dir
+C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/package.dir
+C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/package_source.dir
+C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/rebuild_cache.dir

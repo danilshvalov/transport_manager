@@ -8,18 +8,18 @@
 #include <vector>
 
 
-#include "description.h"
+#include "descriptions/descriptions.h"
 #include "json.h"
-#include "svg.h"
+#include "svg/svg.h"
 
 namespace MapDrawer {
 struct StopInfo {
   std::string name;
-  Sphere::Point point;
+  sphere::Point point;
 };
 
 bool IsAdjacentStops(const StopInfo &lhs, const StopInfo &rhs,
-                     const Descriptions::StopsDict &stops_dict);
+                     const descriptions::StopsDict &stops_dict);
 
 class Projector {
 private:
@@ -40,7 +40,7 @@ private:
   double padding_;
 
 public:
-  Projector(const Descriptions::StopsDict &stops_dict, double max_width,
+  Projector(const descriptions::StopsDict &stops_dict, double max_width,
             double max_height, double padding);
   Svg::Point GetPoint(const std::string &stop_name) const;
 };
@@ -100,7 +100,7 @@ private:
 
   void InitSettings(const Json::Dict &settings);
   void PrepareStops(const map<string, Svg::Point> &stop_points);
-  void PrepareBuses(const Descriptions::BusesDict &buses_dict,
+  void PrepareBuses(const descriptions::BusesDict &buses_dict,
                     const map<string, Svg::Point> &stop_points);
   void PrepareLabel(Svg::Text label, vector<Svg::Text> &container,
                     const LabelSettings &label_settings);
@@ -112,12 +112,12 @@ private:
   void ProcessLayers(const std::vector<std::string> &layers);
 
   std::map<std::string, Svg::Point>
-  ParseStopPoints(const Descriptions::StopsDict &stops_dict);
+  ParseStopPoints(const descriptions::StopsDict &stops_dict);
 
 public:
   explicit Drawer(const MapSettings &settings);
-  explicit Drawer(const Descriptions::BusesDict &buses_dict,
-                  const Descriptions::StopsDict &stops_dict,
+  explicit Drawer(const descriptions::BusesDict &buses_dict,
+                  const descriptions::StopsDict &stops_dict,
                   const Json::Dict &settings);
   const Svg::Document &GetMap() const;
   Drawer &AddStopNames();
@@ -127,5 +127,5 @@ public:
 };
 
 std::map<std::string, Svg::Point>
-ParseStopPoints(const Descriptions::StopsDict &stops_dict);
+ParseStopPoints(const descriptions::StopsDict &stops_dict);
 } // namespace MapDrawer

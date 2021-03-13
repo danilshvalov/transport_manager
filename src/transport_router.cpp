@@ -1,5 +1,5 @@
 #include "transport_router.h"
-void TransportRouter::FillGraphWithStops(const std::unordered_map<std::string, const Descriptions::Stop *> &stops_dict) {
+void TransportRouter::FillGraphWithStops(const std::unordered_map<std::string, const descriptions::Stop *> &stops_dict) {
   Graph::VertexId vertex_id = 0;
 
   for (const auto&[stop_name, _] : stops_dict) {
@@ -21,8 +21,8 @@ void TransportRouter::FillGraphWithStops(const std::unordered_map<std::string, c
 
   assert(vertex_id == graph_.GetVertexCount());
 }
-void TransportRouter::FillGraphWithBuses(const Descriptions::BusesDict &buses_dict,
-                                         const Descriptions::StopsDict &stops_dict) {
+void TransportRouter::FillGraphWithBuses(const descriptions::BusesDict &buses_dict,
+                                         const descriptions::StopsDict &stops_dict) {
   for (const auto&[_, bus_item] : buses_dict) {
     const auto &bus = *bus_item;
     const size_t stop_count = bus.stop_list.size();
@@ -30,7 +30,7 @@ void TransportRouter::FillGraphWithBuses(const Descriptions::BusesDict &buses_di
     if (stop_count <= 1) continue;
 
     auto compute_distance_from = [&bus, &stops_dict](size_t lhs_idx) {
-      return Descriptions::ComputeStopDistance(*stops_dict.at(bus.stop_list[lhs_idx]),
+      return descriptions::ComputeStopDistance(*stops_dict.at(bus.stop_list[lhs_idx]),
                                                *stops_dict.at(bus.stop_list[lhs_idx + 1]));
     };
 
@@ -58,8 +58,8 @@ void TransportRouter::FillGraphWithBuses(const Descriptions::BusesDict &buses_di
     }
   }
 }
-TransportRouter::TransportRouter(std::unordered_map<std::string, const Descriptions::Bus *> buses_dict,
-                                 std::unordered_map<std::string, const Descriptions::Stop *> stops_dict,
+TransportRouter::TransportRouter(std::unordered_map<std::string, const descriptions::Bus *> buses_dict,
+                                 std::unordered_map<std::string, const descriptions::Stop *> stops_dict,
                                  TransportRouter::RoutingSettings routing_settings) :
     routing_settings_(routing_settings),
     graph_(stops_dict.size() * 2),

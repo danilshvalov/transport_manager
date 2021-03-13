@@ -1,16 +1,18 @@
 #pragma once
 
+#define _USE_MATH_DEFINES
+
 #include <algorithm>
 #include <cassert>
 #include <cmath>
 #include <iostream>
 #include <unordered_map>
 
-#include "svg.h"
+#include "svg/svg.h"
 #include "utils.h"
 
 
-namespace Sphere {
+namespace sphere {
 
 struct Point {
   double lat = 0;
@@ -26,4 +28,4 @@ double ConvertToRadians(double degree);
 
 Point Parse(std::istream &is);
 
-} // namespace Sphere
+} // namespace sphere

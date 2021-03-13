@@ -8,12 +8,12 @@ using namespace std;
 namespace MapDrawer {
 
 bool IsAdjacentStops(const StopInfo &lhs, const StopInfo &rhs,
-                     const Descriptions::StopsDict &stops_dict) {
+                     const descriptions::StopsDict &stops_dict) {
   return stops_dict.at(lhs.name)->distances.count(rhs.name) != 0 ||
          stops_dict.at(rhs.name)->distances.count(lhs.name) != 0;
 }
 
-Projector::Projector(const Descriptions::StopsDict &stops_dict,
+Projector::Projector(const descriptions::StopsDict &stops_dict,
                      double max_width, double max_height, double padding)
     : width_(max_width), height_(max_height), padding_(padding) {
   unordered_map<string, PointIds> stop_ids;
@@ -184,8 +184,8 @@ Svg::Point ParseOffset(const Json::Array &array) {
 }
 
 map<string, Svg::Point>
-Drawer::ParseStopPoints(const Descriptions::StopsDict &stops_dict) {
-  // vector<Sphere::Point> stops_points;
+Drawer::ParseStopPoints(const descriptions::StopsDict &stops_dict) {
+  // vector<sphere::Point> stops_points;
   // stops_points.reserve(stops_dict.size());
 
   // for (const auto &[_, stop] : stops_dict) {
@@ -206,8 +206,8 @@ Drawer::ParseStopPoints(const Descriptions::StopsDict &stops_dict) {
 }
 
 Drawer::Drawer(const MapSettings &settings) : settings_(settings) {}
-Drawer::Drawer(const Descriptions::BusesDict &buses_dict,
-               const Descriptions::StopsDict &stops_dict,
+Drawer::Drawer(const descriptions::BusesDict &buses_dict,
+               const descriptions::StopsDict &stops_dict,
                const Json::Dict &settings) {
   InitSettings(settings);
 
@@ -268,10 +268,10 @@ void Drawer::PrepareStops(const map<string, Svg::Point> &stop_points) {
   }
 }
 
-void Drawer::PrepareBuses(const Descriptions::BusesDict &buses_dict,
+void Drawer::PrepareBuses(const descriptions::BusesDict &buses_dict,
                           const map<string, Svg::Point> &stop_points) {
 
-  vector<pair<string, const Descriptions::Bus *>> buses_list(buses_dict.begin(),
+  vector<pair<string, const descriptions::Bus *>> buses_list(buses_dict.begin(),
                                                              buses_dict.end());
   sort(buses_list.begin(), buses_list.end());
 

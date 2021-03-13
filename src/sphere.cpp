@@ -1,6 +1,6 @@
 #include "sphere.h"
 
-namespace Sphere {
+namespace sphere {
 
 
 
@@ -25,4 +25,4 @@ Point Parse(std::istream &is) {
 bool operator==(const Point &lhs, const Point &rhs) {
   return tie(lhs.lat, lhs.lon) == tie(rhs.lat, rhs.lon);
 }
-} // namespace Sphere
+} // namespace sphere

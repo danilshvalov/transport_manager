@@ -13,45 +13,45 @@ TransportManager::GetBus(const std::string &name) const {
 }
 double TransportManager::ComputeRouteLength(
     const std::vector<std::string> &stop_list,
-    std::unordered_map<std::string, const Descriptions::Stop *> &stops_info) {
+    std::unordered_map<std::string, const descriptions::Stop *> &stops_info) {
   double result = 0;
   for (size_t i = 1; i < stop_list.size(); ++i) {
-    result += Descriptions::ComputeStopDistance(
+    result += descriptions::ComputeStopDistance(
         *stops_info.at(stop_list[i - 1]), *stops_info.at(stop_list[i]));
   }
   return result;
 }
 double TransportManager::ComputeRouteDistance(
     const std::vector<std::string> &stop_list,
-    std::unordered_map<std::string, const Descriptions::Stop *> &stops_info) {
+    std::unordered_map<std::string, const descriptions::Stop *> &stops_info) {
   double result = 0;
   for (size_t i = 1; i < stop_list.size(); ++i) {
-    result += Sphere::CalcDistance(stops_info[stop_list[i]]->position,
+    result += sphere::CalcDistance(stops_info[stop_list[i]]->position,
                                    stops_info[stop_list[i - 1]]->position);
   }
   return result;
 }
 
-TransportManager::TransportManager(std::vector<Descriptions::InputQuery> data,
+TransportManager::TransportManager(std::vector<descriptions::InputQuery> data,
                                    const Json::Dict &routing_settings,
                                    const Json::Dict &drawer_settings) {
   auto stops_end =
       std::partition(std::begin(data), std::end(data), [](const auto &item) {
-        return std::holds_alternative<Descriptions::Stop>(item);
+        return std::holds_alternative<descriptions::Stop>(item);
       });
 
-  Descriptions::StopsDict stops_data;
+  descriptions::StopsDict stops_data;
 
   for (const auto &desc : Range(std::begin(data), stops_end)) {
-    const auto &stop = std::get<Descriptions::Stop>(desc);
+    const auto &stop = std::get<descriptions::Stop>(desc);
     stops_data[stop.name] = &stop;
     stops_.insert({stop.name, {}});
   }
 
-  Descriptions::BusesDict buses_data;
+  descriptions::BusesDict buses_data;
 
   for (const auto &desc : Range(stops_end, std::end(data))) {
-    const auto &bus = std::get<Descriptions::Bus>(desc);
+    const auto &bus = std::get<descriptions::Bus>(desc);
     buses_data[bus.name] = &bus;
     buses_.insert(
         {bus.name,

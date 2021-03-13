@@ -8,7 +8,7 @@
 
 #include "router.h"
 #include "graph.h"
-#include "description.h"
+#include "descriptions/descriptions.h"
 
 class TransportRouter {
  public:
@@ -45,13 +45,13 @@ class TransportRouter {
   std::vector<VertexInfo> vertices_info_;
   std::vector<EdgeInfo> edges_info_;
 
-  void FillGraphWithStops(const std::unordered_map<std::string, const Descriptions::Stop *> &stops_dict);
+  void FillGraphWithStops(const std::unordered_map<std::string, const descriptions::Stop *> &stops_dict);
 
-  void FillGraphWithBuses(const Descriptions::BusesDict &buses_dict, const Descriptions::StopsDict &stops_dict);
+  void FillGraphWithBuses(const descriptions::BusesDict &buses_dict, const descriptions::StopsDict &stops_dict);
 
  public:
-  TransportRouter(std::unordered_map<std::string, const Descriptions::Bus *> buses_dict,
-                  std::unordered_map<std::string, const Descriptions::Stop *> stops_dict,
+  TransportRouter(std::unordered_map<std::string, const descriptions::Bus *> buses_dict,
+                  std::unordered_map<std::string, const descriptions::Stop *> stops_dict,
                   RoutingSettings routing_settings);
 
   struct RouteInfo {

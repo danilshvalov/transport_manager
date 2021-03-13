@@ -8,9 +8,9 @@
 #include <unordered_map>
 #include <vector>
 
-#include "description.h"
+#include "descriptions/descriptions.h"
 #include "map_drawer.h"
-#include "svg.h"
+#include "svg/svg.h"
 #include "transport_router.h"
 #include "utils.h"
 
@@ -34,11 +34,11 @@ private:
 
   static double ComputeRouteLength(
       const std::vector<std::string> &stop_list,
-      std::unordered_map<std::string, const Descriptions::Stop *> &stops_info);
+      std::unordered_map<std::string, const descriptions::Stop *> &stops_info);
 
   static double ComputeRouteDistance(
       const std::vector<std::string> &stop_list,
-      std::unordered_map<std::string, const Descriptions::Stop *> &stops_info);
+      std::unordered_map<std::string, const descriptions::Stop *> &stops_info);
 
   std::unordered_map<std::string, Bus> buses_;
   std::unordered_map<std::string, Stop> stops_;
@@ -46,7 +46,7 @@ private:
   std::unique_ptr<MapDrawer::Drawer> map_drawer_;
 
 public:
-  explicit TransportManager(std::vector<Descriptions::InputQuery>,
+  explicit TransportManager(std::vector<descriptions::InputQuery>,
                             const Json::Dict &routing_settings,
                             const Json::Dict &drawer_settings);
   const Stop *GetStop(const std::string &name) const;
