@@ -1,4 +1,4 @@
-"C:\dev\programs\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\dev\projects\cpp\transport_manager
+"C:\dev\programs\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_C_COMPILER=C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/Llvm/bin/clang.exe" "-DCMAKE_CXX_COMPILER=C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/Llvm/bin/clang++.exe" -G "CodeBlocks - NMake Makefiles" C:\dev\projects\cpp\transport_manager
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/dev/projects/cpp/transport_manager/cmake-build-debug

@@ -11,7 +11,7 @@ using Keys = configuration::json::RequestsKeys;
 
 class JSONDeserializeVisitor {
  public:
-  JSONDeserializeVisitor(const Json::Dict &dict, const Keys &keys);
+  JSONDeserializeVisitor(const json::Dict &dict, const Keys &keys);
 
   template<typename T>
   void operator()(Request<T> &req) const {
@@ -22,7 +22,7 @@ class JSONDeserializeVisitor {
   void operator()(RouteRequestData &req_data) const;
 
  private:
-  const Json::Dict &data_;
+  const json::Dict &data_;
   const Keys &keys_;
 };
 

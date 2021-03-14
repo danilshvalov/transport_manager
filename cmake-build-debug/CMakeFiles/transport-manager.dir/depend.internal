@@ -24,6 +24,7 @@ CMakeFiles/transport-manager.dir/src/descriptions/description_tests.cpp.obj
  C:/dev/projects/cpp/transport_manager/src/descriptions/description_tests.h
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
 CMakeFiles/transport-manager.dir/src/descriptions/descriptions.cpp.obj
  ../src/configuration/configuration.h
  ../src/configuration/json/configuration_json.h
@@ -35,6 +36,7 @@ CMakeFiles/transport-manager.dir/src/descriptions/descriptions.cpp.obj
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.cpp
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
 CMakeFiles/transport-manager.dir/src/descriptions/descriptions_json_visitor.cpp.obj
  ../src/configuration/configuration.h
  ../src/configuration/json/configuration_json.h
@@ -45,6 +47,18 @@ CMakeFiles/transport-manager.dir/src/descriptions/descriptions_json_visitor.cpp.
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.cpp
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
+CMakeFiles/transport-manager.dir/src/descriptions/descriptions_parsers.cpp.obj
+ ../src/configuration/configuration.h
+ ../src/configuration/json/configuration_json.h
+ ../src/json.h
+ ../src/sphere.h
+ ../src/svg/svg.h
+ ../src/utils/utils.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.cpp
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
 CMakeFiles/transport-manager.dir/src/descriptions/errors/descriptions_errors.cpp.obj
  C:/dev/projects/cpp/transport_manager/src/descriptions/errors/descriptions_errors.cpp
  C:/dev/projects/cpp/transport_manager/src/descriptions/errors/descriptions_errors.h
@@ -57,6 +71,7 @@ CMakeFiles/transport-manager.dir/src/main.cpp.obj
  ../src/descriptions/description_tests.h
  ../src/descriptions/descriptions.h
  ../src/descriptions/descriptions_json_visitor.h
+ ../src/descriptions/descriptions_types.h
  ../src/requests/errors/requests_errors.h
  ../src/requests/requests.h
  ../src/requests/requests_json_visitor.h
@@ -82,6 +97,7 @@ CMakeFiles/transport-manager.dir/src/map_drawer.cpp.obj
  ../src/sphere.h
  ../src/utils/utils.h
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
  C:/dev/projects/cpp/transport_manager/src/json.h
  C:/dev/projects/cpp/transport_manager/src/map_drawer.cpp
  C:/dev/projects/cpp/transport_manager/src/map_drawer.h
@@ -93,6 +109,7 @@ CMakeFiles/transport-manager.dir/src/requests/requests.cpp.obj
  ../src/configuration/configuration.h
  ../src/configuration/json/configuration_json.h
  ../src/descriptions/descriptions.h
+ ../src/descriptions/descriptions_types.h
  ../src/graph.h
  ../src/json.h
  ../src/map_drawer.h
@@ -112,6 +129,7 @@ CMakeFiles/transport-manager.dir/src/requests/requests_json_visitor.cpp.obj
  ../src/configuration/configuration.h
  ../src/configuration/json/configuration_json.h
  ../src/descriptions/descriptions.h
+ ../src/descriptions/descriptions_types.h
  ../src/graph.h
  ../src/json.h
  ../src/map_drawer.h
@@ -128,6 +146,7 @@ CMakeFiles/transport-manager.dir/src/requests/requests_tests.cpp.obj
  ../src/configuration/configuration.h
  ../src/configuration/json/configuration_json.h
  ../src/descriptions/descriptions.h
+ ../src/descriptions/descriptions_types.h
  ../src/graph.h
  ../src/json.h
  ../src/map_drawer.h
@@ -144,6 +163,9 @@ CMakeFiles/transport-manager.dir/src/requests/requests_tests.cpp.obj
  C:/dev/projects/cpp/transport_manager/src/requests/requests_json_visitor.h
  C:/dev/projects/cpp/transport_manager/src/requests/requests_tests.cpp
  C:/dev/projects/cpp/transport_manager/src/requests/requests_tests.h
+ C:/dev/projects/cpp/transport_manager/src/requests/requests_types.h
+CMakeFiles/transport-manager.dir/src/requests/requests_types.cpp.obj
+ C:/dev/projects/cpp/transport_manager/src/requests/requests_types.cpp
  C:/dev/projects/cpp/transport_manager/src/requests/requests_types.h
 CMakeFiles/transport-manager.dir/src/responses/responses.cpp.obj
  ../src/utils/utils.h
@@ -165,11 +187,12 @@ CMakeFiles/transport-manager.dir/src/svg/svg.cpp.obj
 CMakeFiles/transport-manager.dir/src/transport_manager.cpp.obj
  ../src/configuration/configuration.h
  ../src/configuration/json/configuration_json.h
- ../src/json.h
  ../src/sphere.h
  ../src/utils/utils.h
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
  C:/dev/projects/cpp/transport_manager/src/graph.h
+ C:/dev/projects/cpp/transport_manager/src/json.h
  C:/dev/projects/cpp/transport_manager/src/map_drawer.h
  C:/dev/projects/cpp/transport_manager/src/router.h
  C:/dev/projects/cpp/transport_manager/src/svg/svg.h
@@ -184,6 +207,7 @@ CMakeFiles/transport-manager.dir/src/transport_router.cpp.obj
  ../src/svg/svg.h
  ../src/utils/utils.h
  C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
+ C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
  C:/dev/projects/cpp/transport_manager/src/graph.h
  C:/dev/projects/cpp/transport_manager/src/router.h
  C:/dev/projects/cpp/transport_manager/src/transport_router.cpp

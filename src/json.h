@@ -6,8 +6,11 @@
 #include <variant>
 #include <vector>
 #include <iomanip>
+#include <type_traits>
 
-namespace Json {
+namespace json {
+
+
 
 class Node : std::variant<std::vector<Node>,
                           std::map<std::string, Node>,
@@ -35,9 +38,9 @@ class Node : std::variant<std::vector<Node>,
     return std::get<bool>(*this);
   }
 
-  friend std::ostream &operator<<(std::ostream &os, const Json::Node &nodes);
-  friend std::ostream &operator<<(std::ostream &os, const std::vector<Json::Node> &nodes);
-  friend std::ostream &operator<<(std::ostream &os, const std::map<std::string, Json::Node> &nodes);
+  friend std::ostream &operator<<(std::ostream &os, const json::Node &nodes);
+  friend std::ostream &operator<<(std::ostream &os, const std::vector<json::Node> &nodes);
+  friend std::ostream &operator<<(std::ostream &os, const std::map<std::string, json::Node> &nodes);
 
   explicit operator double() const {
     return AsDouble();
@@ -88,5 +91,26 @@ class Document {
 };
 
 Document Load(std::istream &input);
+
+
+template<typename T, typename = void>
+struct IsDict : std::false_type {};
+
+template<typename T>
+struct IsDict<T, std::enable_if_t<std::is_same_v<Dict, T>>> : std::true_type {};
+
+template<typename T>
+constexpr bool IsDictValue = IsDict<T>::value;
+
+
+template<typename T, typename = void>
+struct IsArray : std::false_type {};
+
+template<typename T>
+struct IsArray<T, std::enable_if_t<std::is_same_v<Array, T>>> : std::true_type {};
+
+template<typename T>
+constexpr bool IsArrayValue = IsArray<T>::value;
+
 
 }

@@ -34,7 +34,8 @@ auto PrepareJSONDescriptionKeys() {
       .lat = "latitude",
       .lon = "longitude",
       .distances = "road_distances",
-      .stop_list = "stops"
+      .stop_list = "stops",
+      .is_roundtrip = "is_roundtrip"
   };
 }
 
@@ -53,12 +54,12 @@ void SimpleJSONTest() {
 
   ASSERT(input);
 
-  auto document = Json::Load(input);
+  auto document = json::Load(input);
 
   auto json = document.GetRoot().AsMap();
-//  auto desc = descriptions::ReadDescriptionsNew(json["base_requests"].AsArray(), config.GetJSONConfig().GetDescriptionsKeys());
-
-  auto req = requests::ReadRequests(json["stat_requests"].AsArray(), json_config.GetRequestsKeys());
+  auto desc = descriptions::ReadDescriptions(json["base_requests"].AsArray(), config.GetJSONConfig().GetDescriptionsKeys());
+  const auto& req_keys = json_config.GetRequestsKeys();
+  auto req = requests::ReadRequests(json["stat_requests"].AsArray(), req_keys);
 
 
 
@@ -81,14 +82,14 @@ int main() {
   TestRunner tr;
 
 
-
-  descriptions::tests::RunTests();
+// отключены в файлах
+//  descriptions::tests::RunTests();
 //  requests::tests::RunTests();
 
   tr.RunTest(SimpleJSONTest, "SimpleJSON");
   cout.precision(25);
 
-//  auto document = Json::Load(std::cin);
+//  auto document = json::Load(std::cin);
 //
 //  auto json = document.GetRoot().AsMap();
 //  DataType transport_manager(

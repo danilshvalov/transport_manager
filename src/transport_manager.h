@@ -47,8 +47,8 @@ private:
 
 public:
   explicit TransportManager(std::vector<descriptions::InputQuery>,
-                            const Json::Dict &routing_settings,
-                            const Json::Dict &drawer_settings);
+                            const json::Dict &routing_settings,
+                            const json::Dict &drawer_settings);
   const Stop *GetStop(const std::string &name) const;
   const Bus *GetBus(const std::string &name) const;
   std::optional<TransportRouter::RouteInfo>

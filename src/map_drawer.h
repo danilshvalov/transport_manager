@@ -83,10 +83,10 @@ struct MapSettings {
   std::vector<std::string> layers;
 };
 
-std::vector<std::string> ParseLayers(const Json::Array &array);
-Svg::Color ParseColor(const Json::Node &node);
-std::vector<Svg::Color> ParseColorPalette(const Json::Array &dict);
-Svg::Point ParseOffset(const Json::Array &array);
+std::vector<std::string> ParseLayers(const json::Array &array);
+Svg::Color ParseColor(const json::Node &node);
+std::vector<Svg::Color> ParseColorPalette(const json::Array &dict);
+Svg::Point ParseOffset(const json::Array &array);
 
 class Drawer {
 public:
@@ -98,7 +98,7 @@ private:
   MapSettings settings_;
   Svg::Document document_;
 
-  void InitSettings(const Json::Dict &settings);
+  void InitSettings(const json::Dict &settings);
   void PrepareStops(const map<string, Svg::Point> &stop_points);
   void PrepareBuses(const descriptions::BusesDict &buses_dict,
                     const map<string, Svg::Point> &stop_points);
@@ -118,7 +118,7 @@ public:
   explicit Drawer(const MapSettings &settings);
   explicit Drawer(const descriptions::BusesDict &buses_dict,
                   const descriptions::StopsDict &stops_dict,
-                  const Json::Dict &settings);
+                  const json::Dict &settings);
   const Svg::Document &GetMap() const;
   Drawer &AddStopNames();
   Drawer &AddStopCircles();

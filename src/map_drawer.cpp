@@ -137,7 +137,7 @@ Svg::Point Projector::GetPoint(const std::string &stop_name) const {
   return stop_points_.at(stop_name);
 }
 
-vector<string> ParseLayers(const Json::Array &array) {
+vector<string> ParseLayers(const json::Array &array) {
   vector<string> result;
   result.reserve(array.size());
 
@@ -147,7 +147,7 @@ vector<string> ParseLayers(const Json::Array &array) {
   return result;
 }
 
-Svg::Color ParseColor(const Json::Node &node) {
+Svg::Color ParseColor(const json::Node &node) {
   if (node.IsString()) {
     return {node.AsString()};
   } else if (node.IsArray()) {
@@ -171,7 +171,7 @@ Svg::Color ParseColor(const Json::Node &node) {
   return Svg::NoneColor;
 }
 
-std::vector<Svg::Color> ParseColorPalette(const Json::Array &array) {
+std::vector<Svg::Color> ParseColorPalette(const json::Array &array) {
   std::vector<Svg::Color> result;
   for (const auto &color : array) {
     result.push_back(ParseColor(color));
@@ -179,7 +179,7 @@ std::vector<Svg::Color> ParseColorPalette(const Json::Array &array) {
   return result;
 }
 
-Svg::Point ParseOffset(const Json::Array &array) {
+Svg::Point ParseOffset(const json::Array &array) {
   return {array[0].AsDouble(), array[1].AsDouble()};
 }
 
@@ -208,7 +208,7 @@ Drawer::ParseStopPoints(const descriptions::StopsDict &stops_dict) {
 Drawer::Drawer(const MapSettings &settings) : settings_(settings) {}
 Drawer::Drawer(const descriptions::BusesDict &buses_dict,
                const descriptions::StopsDict &stops_dict,
-               const Json::Dict &settings) {
+               const json::Dict &settings) {
   InitSettings(settings);
 
   auto stop_points = ParseStopPoints(stops_dict);
@@ -219,7 +219,7 @@ Drawer::Drawer(const descriptions::BusesDict &buses_dict,
   ProcessLayers(settings_.layers);
 }
 
-void Drawer::InitSettings(const Json::Dict &settings) {
+void Drawer::InitSettings(const json::Dict &settings) {
   settings_ = MapSettings{
       .width = settings.at("width").AsDouble(),
       .height = settings.at("height").AsDouble(),

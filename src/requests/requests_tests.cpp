@@ -2,10 +2,10 @@
 #include "requests_json_visitor.h"
 
 using namespace std;
-using namespace Json;
+using namespace json;
 
 void requests::tests::ReadRequestsTest() {
-  Json::Dict dict;
+  json::Dict dict;
   visitors::Keys keys;
   visitors::JSONDeserializeVisitor visitor(dict, keys);
   StopRequest request;

@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <variant>
+
 namespace requests {
 
 struct EmptyRequestData {};

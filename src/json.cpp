@@ -2,7 +2,7 @@
 
 using namespace std;
 
-namespace Json {
+namespace json {
 
 Document::Document(Node root) : root(move(root)) {
 }
@@ -112,12 +112,12 @@ std::ostream &operator<<(ostream &os, const Node &nodes) {
     return os << nodes.AsMap();
   } else if (std::holds_alternative<std::string>(nodes)) {
     return os << quoted(nodes.AsString());
-  } else if (std::holds_alternative<std::vector<Json::Node>>(nodes)) {
+  } else if (std::holds_alternative<std::vector<json::Node>>(nodes)) {
     return os << nodes.AsArray();
   }
   return os;
 }
-std::ostream &operator<<(ostream &os, const std::map<std::string, Json::Node> &nodes) {
+std::ostream &operator<<(ostream &os, const std::map<std::string, json::Node> &nodes) {
   os << "{";
   bool first = true;
   for (const auto &node : nodes) {
@@ -131,7 +131,7 @@ std::ostream &operator<<(ostream &os, const std::map<std::string, Json::Node> &n
   return os << "}";
 }
 
-std::ostream &operator<<(std::ostream &os, const std::vector<Json::Node> &nodes) {
+std::ostream &operator<<(std::ostream &os, const std::vector<json::Node> &nodes) {
   os << '[';
   bool first = true;
   for (const auto &node : nodes) {

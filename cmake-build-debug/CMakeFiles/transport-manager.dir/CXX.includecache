@@ -29,12 +29,8 @@ json.h
 ../src/descriptions/json.h
 
 ../src/descriptions/descriptions.h
-json.h
-../src/descriptions/json.h
-sphere.h
-../src/descriptions/sphere.h
-configuration.h
-../src/descriptions/configuration.h
+descriptions_types.h
+../src/descriptions/descriptions_types.h
 vector
 -
 variant
@@ -47,6 +43,26 @@ descriptions.h
 ../src/descriptions/descriptions.h
 sphere.h
 ../src/descriptions/sphere.h
+
+../src/descriptions/descriptions_types.h
+sphere.h
+../src/descriptions/sphere.h
+configuration.h
+../src/descriptions/configuration.h
+json.h
+../src/descriptions/json.h
+vector
+-
+variant
+-
+unordered_map
+-
+
+../src/descriptions/errors/descriptions_errors.h
+system_error
+-
+type_traits
+-
 
 ../src/graph.h
 vector
@@ -68,6 +84,8 @@ variant
 vector
 -
 iomanip
+-
+type_traits
 -
 
 ../src/map_drawer.h
@@ -145,6 +163,10 @@ test_runner.h
 ../src/requests/test_runner.h
 
 ../src/requests/requests_types.h
+string
+-
+variant
+-
 
 ../src/responses/responses.h
 variant
@@ -282,13 +304,71 @@ unordered_set
 stdexcept
 -
 
+C:/dev/projects/cpp/transport_manager/src/descriptions/description_tests.cpp
+description_tests.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/description_tests.h
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/description_tests.h
+sstream
+-
+descriptions.h
 C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
+descriptions_json_visitor.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h
+test_runner.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/test_runner.h
 json.h
 C:/dev/projects/cpp/transport_manager/src/descriptions/json.h
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.cpp
+descriptions.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
+descriptions_json_visitor.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h
+descriptions_errors.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_errors.h
+utils.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/utils.h
+functional
+-
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
+descriptions_types.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
+vector
+-
+variant
+-
+unordered_map
+-
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.cpp
+descriptions_json_visitor.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h
+descriptions_parsers.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.h
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h
+descriptions.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions.h
+sphere.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/sphere.h
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.cpp
+descriptions_parsers.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.h
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.h
+descriptions_types.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
+
+C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_types.h
 sphere.h
 C:/dev/projects/cpp/transport_manager/src/descriptions/sphere.h
 configuration.h
 C:/dev/projects/cpp/transport_manager/src/descriptions/configuration.h
+json.h
+C:/dev/projects/cpp/transport_manager/src/descriptions/json.h
 vector
 -
 variant
@@ -316,6 +396,8 @@ variant
 vector
 -
 iomanip
+-
+type_traits
 -
 
 C:/dev/projects/cpp/transport_manager/src/main.cpp
@@ -347,6 +429,12 @@ description_tests.h
 C:/dev/projects/cpp/transport_manager/src/description_tests.h
 requests_tests.h
 C:/dev/projects/cpp/transport_manager/src/requests_tests.h
+
+C:/dev/projects/cpp/transport_manager/src/map_drawer.cpp
+map_drawer.h
+C:/dev/projects/cpp/transport_manager/src/map_drawer.h
+fstream
+-
 
 C:/dev/projects/cpp/transport_manager/src/map_drawer.h
 algorithm
@@ -416,6 +504,10 @@ C:/dev/projects/cpp/transport_manager/src/requests/requests_json_visitor.h
 requests_errors.h
 C:/dev/projects/cpp/transport_manager/src/requests/requests_errors.h
 
+C:/dev/projects/cpp/transport_manager/src/requests/requests_json_visitor.cpp
+requests_json_visitor.h
+C:/dev/projects/cpp/transport_manager/src/requests/requests_json_visitor.h
+
 C:/dev/projects/cpp/transport_manager/src/requests/requests_json_visitor.h
 json.h
 C:/dev/projects/cpp/transport_manager/src/requests/json.h
@@ -443,6 +535,10 @@ test_runner.h
 C:/dev/projects/cpp/transport_manager/src/requests/test_runner.h
 
 C:/dev/projects/cpp/transport_manager/src/requests/requests_types.h
+string
+-
+variant
+-
 
 C:/dev/projects/cpp/transport_manager/src/router.h
 graph.h
@@ -502,6 +598,10 @@ vector
 queue
 -
 
+C:/dev/projects/cpp/transport_manager/src/transport_manager.cpp
+transport_manager.h
+C:/dev/projects/cpp/transport_manager/src/transport_manager.h
+
 C:/dev/projects/cpp/transport_manager/src/transport_manager.h
 algorithm
 -
@@ -527,6 +627,10 @@ transport_router.h
 C:/dev/projects/cpp/transport_manager/src/transport_router.h
 utils.h
 C:/dev/projects/cpp/transport_manager/src/utils.h
+
+C:/dev/projects/cpp/transport_manager/src/transport_router.cpp
+transport_router.h
+C:/dev/projects/cpp/transport_manager/src/transport_router.h
 
 C:/dev/projects/cpp/transport_manager/src/transport_router.h
 unordered_map

@@ -12,6 +12,7 @@ struct DescriptionsKeys {
   std::string lon;
   std::string distances;
   std::string stop_list;
+  std::string is_roundtrip;
 };
 
 struct RequestsKeys {

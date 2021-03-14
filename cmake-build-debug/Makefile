@@ -311,6 +311,33 @@ src\descriptions\descriptions_json_visitor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.s
 .PHONY : src\descriptions\descriptions_json_visitor.cpp.s
 
+src\descriptions\descriptions_parsers.obj: src\descriptions\descriptions_parsers.cpp.obj
+
+.PHONY : src\descriptions\descriptions_parsers.obj
+
+# target to build an object file
+src\descriptions\descriptions_parsers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.obj
+.PHONY : src\descriptions\descriptions_parsers.cpp.obj
+
+src\descriptions\descriptions_parsers.i: src\descriptions\descriptions_parsers.cpp.i
+
+.PHONY : src\descriptions\descriptions_parsers.i
+
+# target to preprocess a source file
+src\descriptions\descriptions_parsers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.i
+.PHONY : src\descriptions\descriptions_parsers.cpp.i
+
+src\descriptions\descriptions_parsers.s: src\descriptions\descriptions_parsers.cpp.s
+
+.PHONY : src\descriptions\descriptions_parsers.s
+
+# target to generate assembly for a file
+src\descriptions\descriptions_parsers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.s
+.PHONY : src\descriptions\descriptions_parsers.cpp.s
+
 src\descriptions\errors\descriptions_errors.obj: src\descriptions\errors\descriptions_errors.cpp.obj
 
 .PHONY : src\descriptions\errors\descriptions_errors.obj
@@ -526,6 +553,33 @@ src\requests\requests_tests.s: src\requests\requests_tests.cpp.s
 src\requests\requests_tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.s
 .PHONY : src\requests\requests_tests.cpp.s
+
+src\requests\requests_types.obj: src\requests\requests_types.cpp.obj
+
+.PHONY : src\requests\requests_types.obj
+
+# target to build an object file
+src\requests\requests_types.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.obj
+.PHONY : src\requests\requests_types.cpp.obj
+
+src\requests\requests_types.i: src\requests\requests_types.cpp.i
+
+.PHONY : src\requests\requests_types.i
+
+# target to preprocess a source file
+src\requests\requests_types.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.i
+.PHONY : src\requests\requests_types.cpp.i
+
+src\requests\requests_types.s: src\requests\requests_types.cpp.s
+
+.PHONY : src\requests\requests_types.s
+
+# target to generate assembly for a file
+src\requests\requests_types.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\transport-manager.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.s
+.PHONY : src\requests\requests_types.cpp.s
 
 src\responses\responses.obj: src\responses\responses.cpp.obj
 
@@ -745,6 +799,9 @@ help:
 	@echo ... src/descriptions/descriptions_json_visitor.obj
 	@echo ... src/descriptions/descriptions_json_visitor.i
 	@echo ... src/descriptions/descriptions_json_visitor.s
+	@echo ... src/descriptions/descriptions_parsers.obj
+	@echo ... src/descriptions/descriptions_parsers.i
+	@echo ... src/descriptions/descriptions_parsers.s
 	@echo ... src/descriptions/errors/descriptions_errors.obj
 	@echo ... src/descriptions/errors/descriptions_errors.i
 	@echo ... src/descriptions/errors/descriptions_errors.s
@@ -769,6 +826,9 @@ help:
 	@echo ... src/requests/requests_tests.obj
 	@echo ... src/requests/requests_tests.i
 	@echo ... src/requests/requests_tests.s
+	@echo ... src/requests/requests_types.obj
+	@echo ... src/requests/requests_types.i
+	@echo ... src/requests/requests_types.s
 	@echo ... src/responses/responses.obj
 	@echo ... src/responses/responses.i
 	@echo ... src/responses/responses.s

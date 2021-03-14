@@ -6,11 +6,15 @@ using namespace std;
 
 namespace requests {
 
+
+
+
+
 /* FOR DELETION */
-Json::Dict Stop::Process(const TransportManager& manager) const {
+json::Dict Stop::Process(const TransportManager& manager) const {
   if (const auto& stop = manager.GetStop(name); stop) {
-    return Json::Dict{{"buses", [&]() {
-      vector<Json::Node> buses_nodes;
+    return json::Dict{{"buses", [&]() {
+      vector<json::Node> buses_nodes;
       buses_nodes.reserve(stop->buses.size());
 
       for (const auto& bus : stop->buses) {
@@ -21,53 +25,34 @@ Json::Dict Stop::Process(const TransportManager& manager) const {
     }()}};
   }
 
-  return Json::Dict{{"error_message", "not found"s}};
+  return json::Dict{{"error_message", "not found"s}};
 }
-Json::Dict Bus::Process(const TransportManager& manager) const {
+json::Dict Bus::Process(const TransportManager& manager) const {
   if (const auto& bus = manager.GetBus(name); bus) {
-    return Json::Dict{
-        {"route_length", Json::Node{bus->route_length}},
-        {"curvature", Json::Node{bus->curvature}},
-        {"stop_count", Json::Node{static_cast<int>(bus->stop_count)}},
+    return json::Dict{
+        {"route_length", json::Node{bus->route_length}},
+        {"curvature", json::Node{bus->curvature}},
+        {"stop_count", json::Node{static_cast<int>(bus->stop_count)}},
         {"unique_stop_count",
-         Json::Node{static_cast<int>(bus->unique_stop_count)}}};
+         json::Node{static_cast<int>(bus->unique_stop_count)}}};
   }
-  return Json::Dict{{"error_message", "not found"s}};
+  return json::Dict{{"error_message", "not found"s}};
 }
 
 /* ------------------------------------ */
 
-
-/* FOR DELETION */
-//std::vector<Json::Node> ProcessAll(const std::vector<Json::Node>& attrs,
-//                                   const DataType& transport_manager) {
-//  std::vector<Json::Node> result;
-//  result.reserve(attrs.size());
-//
-//  for (const auto& node : attrs) {
-//    auto response = std::visit(
-//        [&transport_manager](const auto& request) {
-//          return request.Process(transport_manager);
-//        },
-//        ReadRequests(node.AsMap()));
-//    response["request_id"] = node.AsMap().at("id");
-//    result.emplace_back(std::move(response));
-//  }
-//
-//  return result;
-//}
-Json::Dict Route::Process(const TransportManager& manager) const {
+json::Dict Route::Process(const TransportManager& manager) const {
   const auto& route = manager.FindRoute(from, to);
 
   if (route) {
-    return Json::Dict{{"total_time", Json::Node(route->total_time)},
+    return json::Dict{{"total_time", json::Node(route->total_time)},
                       {"items", ParseItems(route->items)}};
   }
 
-  return Json::Dict{{"error_message", Json::Node("not found"s)}};
+  return json::Dict{{"error_message", json::Node("not found"s)}};
 }
 
-Json::Dict Map::Process(const TransportManager& managaer) const {
+json::Dict Map::Process(const TransportManager& managaer) const {
   stringstream dict;
   managaer.GetMap().Render(dict);
 
@@ -77,36 +62,71 @@ Json::Dict Map::Process(const TransportManager& managaer) const {
 
 
 
-Json::Array
+json::Array
 Route::ParseItems(const std::vector<TransportRouter::RouteInfo::Item>& items) {
-  Json::Array result;
+  json::Array result;
   for (const auto& item : items) {
     if (std::holds_alternative<TransportRouter::RouteInfo::BusItem>(item)) {
       const auto& bus_item =
           std::get<TransportRouter::RouteInfo::BusItem>(item);
-      result.emplace_back(Json::Dict{
-          {"type", Json::Node("Bus"s)},
-          {"bus", Json::Node(bus_item.bus_name)},
-          {"span_count", Json::Node(static_cast<int>(bus_item.span_count))},
-          {"time", Json::Node(bus_item.time)}});
+      result.emplace_back(json::Dict{
+          {"type", json::Node("Bus"s)},
+          {"bus", json::Node(bus_item.bus_name)},
+          {"span_count", json::Node(static_cast<int>(bus_item.span_count))},
+          {"time", json::Node(bus_item.time)}});
     } else if (std::holds_alternative<TransportRouter::RouteInfo::StopItem>(
         item)) {
       const auto& stop_item =
           std::get<TransportRouter::RouteInfo::StopItem>(item);
       result.emplace_back(
-          Json::Dict{{"type", Json::Node("Wait"s)},
-                     {"stop_name", Json::Node(stop_item.stop_name)},
-                     {"time", Json::Node(stop_item.time)}});
+          json::Dict{{"type", json::Node("Wait"s)},
+                     {"stop_name", json::Node(stop_item.stop_name)},
+                     {"time", json::Node(stop_item.time)}});
     }
   }
 
   return result;
 }
-std::vector<RequestsHolder> ReadRequests(const Json::Array& array, const JsonRequestsKeys& keys) {
-  std::vector<RequestsHolder> result;
-  result.reserve(array.size());
 
-  for (const auto& node_dict : array) {
+template<typename DataType, typename KeysType>
+using ParseFunction = RequestsHolder(*)(const DataType&, const KeysType&);
+
+template<typename RequestType>
+RequestsHolder ParseRequest(const json::Dict& dict, const configuration::json::RequestsKeys& keys);
+
+template<typename DataType, typename KeysType>
+auto ConvertTypeToFunction(std::string_view type) {
+  static const std::unordered_map<std::string_view, ParseFunction<DataType, KeysType>>
+      kTypeToParseFunction = {
+      {"Bus", ParseRequest<BusRequest>},
+      {"Stop", ParseRequest<StopRequest>},
+      {"Route", ParseRequest<RouteRequest>},
+      {"Map", ParseRequest<MapRequest>}
+  };
+
+  if (auto it = kTypeToParseFunction.find(type); it != kTypeToParseFunction.end()) {
+    return it->second;
+  }
+
+  throw std::system_error(RequestError::kUnknownRequestType);
+}
+
+
+template<typename RequestType>
+RequestsHolder ParseRequest(const json::Dict& dict, const configuration::json::RequestsKeys& keys) {
+  visitors::JSONDeserializeVisitor visitor(dict, keys);
+  RequestType request;
+  Visit(visitor, request);
+  return request;
+}
+
+
+
+std::vector<RequestsHolder> ReadRequests(const json::Array& data, const JsonRequestsKeys& keys) {
+  std::vector<RequestsHolder> result;
+  result.reserve(data.size());
+
+  for (const auto& node_dict : data) {
     const auto& dict = node_dict.AsMap();
     const auto& func =
         ConvertTypeToFunction<decltype(dict), decltype(keys)>(dict.at(keys.type).AsString());

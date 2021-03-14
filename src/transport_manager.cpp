@@ -33,8 +33,8 @@ double TransportManager::ComputeRouteDistance(
 }
 
 TransportManager::TransportManager(std::vector<descriptions::InputQuery> data,
-                                   const Json::Dict &routing_settings,
-                                   const Json::Dict &drawer_settings) {
+                                   const json::Dict &routing_settings,
+                                   const json::Dict &drawer_settings) {
   auto stops_end =
       std::partition(std::begin(data), std::end(data), [](const auto &item) {
         return std::holds_alternative<descriptions::Stop>(item);

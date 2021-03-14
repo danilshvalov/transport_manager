@@ -2,7 +2,7 @@
 
 namespace requests::visitors {
 
-JSONDeserializeVisitor::JSONDeserializeVisitor(const Json::Dict &dict, const Keys &keys)
+JSONDeserializeVisitor::JSONDeserializeVisitor(const json::Dict &dict, const Keys &keys)
     : data_(dict), keys_(keys) {}
 
 void JSONDeserializeVisitor::operator()(StopRequestData &req_data) const {

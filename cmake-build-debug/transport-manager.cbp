@@ -4,7 +4,7 @@
 	<Project>
 		<Option title="transport-manager"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="clang"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
@@ -22,7 +22,7 @@
 				<Option working_dir="C:/dev/projects/cpp/transport_manager/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions"/>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions/errors"/>
@@ -38,6 +38,7 @@
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json"/>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json/errors"/>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\Llvm\lib\clang\11.0.0\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
@@ -58,7 +59,7 @@
 				<Option working_dir="C:/dev/projects/cpp/transport_manager/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions"/>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/descriptions/errors"/>
@@ -74,6 +75,7 @@
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json"/>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src/configuration/json/errors"/>
 					<Add directory="C:/dev/projects/cpp/transport_manager/src"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\Llvm\lib\clang\11.0.0\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
@@ -178,6 +180,12 @@
 		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_json_visitor.h">
 			<Option target="transport-manager"/>
 		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/descriptions_parsers.h">
+			<Option target="transport-manager"/>
+		</Unit>
 		<Unit filename="C:/dev/projects/cpp/transport_manager/src/descriptions/errors">
 			<Option target="transport-manager"/>
 		</Unit>
@@ -236,6 +244,12 @@
 			<Option target="transport-manager"/>
 		</Unit>
 		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests_tests.h">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests_types.cpp">
+			<Option target="transport-manager"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/cpp/transport_manager/src/requests/requests_types.h">
 			<Option target="transport-manager"/>
 		</Unit>
 		<Unit filename="C:/dev/projects/cpp/transport_manager/src/responses">

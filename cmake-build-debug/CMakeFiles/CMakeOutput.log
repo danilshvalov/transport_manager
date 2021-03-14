@@ -1,97 +1,209 @@
-The system is: Windows - 10.0.21327 - AMD64
+The system is: Windows - 10.0.21332 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.29.29917/bin/Hostx86/x86/cl.exe 
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/Llvm/bin/clang.exe 
 Build flags: 
 Id flags:  
 
 The output was:
 0
-Microsoft (R) C/C++ Optimizing Compiler Version 19.29.29917 for x86
-Copyright (C) Microsoft Corporation.  All rights reserved.
-
-CMakeCCompilerId.c
-Microsoft (R) Incremental Linker Version 14.29.29917.0
-Copyright (C) Microsoft Corporation.  All rights reserved.
-
-/out:CMakeCCompilerId.exe 
-CMakeCCompilerId.obj 
 
 
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
 
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
-
-The C compiler identification is MSVC, found in "C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.exe"
+The C compiler identification is Clang, found in "C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/a.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.29.29917/bin/Hostx86/x86/cl.exe 
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/Llvm/bin/clang++.exe 
 Build flags: 
 Id flags:  
 
 The output was:
 0
-Microsoft (R) C/C++ Optimizing Compiler Version 19.29.29917 for x86
-Copyright (C) Microsoft Corporation.  All rights reserved.
-
-CMakeCXXCompilerId.cpp
-Microsoft (R) Incremental Linker Version 14.29.29917.0
-Copyright (C) Microsoft Corporation.  All rights reserved.
-
-/out:CMakeCXXCompilerId.exe 
-CMakeCXXCompilerId.obj 
 
 
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
 
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
-
-The CXX compiler identification is MSVC, found in "C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.exe"
+The CXX compiler identification is Clang, found in "C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/a.exe"
 
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_c5f4e\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_c5f4e.dir\build.make /nologo -L                  CMakeFiles\cmTC_c5f4e.dir\build
-Building C object CMakeFiles/cmTC_c5f4e.dir/testCCompiler.c.obj
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @C:\Users\shval\AppData\Local\Temp\nm5D0E.tmp
-testCCompiler.c
-Linking C executable cmTC_c5f4e.exe
-	"C:\dev\programs\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_c5f4e.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_c5f4e.dir\objects1.rsp @C:\Users\shval\AppData\Local\Temp\nm5E67.tmp
+Run Build Command(s):nmake /nologo cmTC_614e3\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_614e3.dir\build.make /nologo -L                  CMakeFiles\cmTC_614e3.dir\build
+Building C object CMakeFiles/cmTC_614e3.dir/testCCompiler.c.obj
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\clang.exe   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles\cmTC_614e3.dir\testCCompiler.c.obj   -c C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_614e3.exe
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\clang.exe -fuse-ld=lld-link -nostartfiles -nostdlib   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd    @CMakeFiles\cmTC_614e3.dir\objects1.rsp  -o cmTC_614e3.exe -Xlinker /implib:cmTC_614e3.lib -Xlinker /pdb:C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_614e3.pdb -Xlinker /version:0.0  @CMakeFiles\cmTC_614e3.dir\linklibs.rsp
 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_f32c9\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_f32c9.dir\build.make /nologo -L                  CMakeFiles\cmTC_f32c9.dir\build
-Building C object CMakeFiles/cmTC_f32c9.dir/CMakeCCompilerABI.c.obj
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @C:\Users\shval\AppData\Local\Temp\nm606A.tmp
-CMakeCCompilerABI.c
-Linking C executable cmTC_f32c9.exe
-	"C:\dev\programs\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f32c9.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_f32c9.dir\objects1.rsp @C:\Users\shval\AppData\Local\Temp\nm60A9.tmp
+Run Build Command(s):nmake /nologo cmTC_959db\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_959db.dir\build.make /nologo -L                  CMakeFiles\cmTC_959db.dir\build
+Building C object CMakeFiles/cmTC_959db.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\clang.exe   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles\cmTC_959db.dir\CMakeCCompilerABI.c.obj   -c "C:\dev\programs\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c"
+Linking C executable cmTC_959db.exe
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\clang.exe -fuse-ld=lld-link -nostartfiles -nostdlib   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd    @CMakeFiles\cmTC_959db.dir\objects1.rsp  -o cmTC_959db.exe -Xlinker /implib:cmTC_959db.lib -Xlinker /pdb:C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_959db.pdb -Xlinker /version:0.0
 
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_edb9c\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_edb9c.dir\build.make /nologo -L                  CMakeFiles\cmTC_edb9c.dir\build
-Building CXX object CMakeFiles/cmTC_edb9c.dir/testCXXCompiler.cxx.obj
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @C:\Users\shval\AppData\Local\Temp\nm629C.tmp
-testCXXCompiler.cxx
-Linking CXX executable cmTC_edb9c.exe
-	"C:\dev\programs\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_edb9c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_edb9c.dir\objects1.rsp @C:\Users\shval\AppData\Local\Temp\nm62FB.tmp
+Run Build Command(s):nmake /nologo cmTC_bb129\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_bb129.dir\build.make /nologo -L                  CMakeFiles\cmTC_bb129.dir\build
+Building CXX object CMakeFiles/cmTC_bb129.dir/testCXXCompiler.cxx.obj
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE    -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles\cmTC_bb129.dir\testCXXCompiler.cxx.obj -c C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+Linking CXX executable cmTC_bb129.exe
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd    @CMakeFiles\cmTC_bb129.dir\objects1.rsp  -o cmTC_bb129.exe -Xlinker /implib:cmTC_bb129.lib -Xlinker /pdb:C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_bb129.pdb -Xlinker /version:0.0  @CMakeFiles\cmTC_bb129.dir\linklibs.rsp
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_135a5\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_135a5.dir\build.make /nologo -L                  CMakeFiles\cmTC_135a5.dir\build
-Building CXX object CMakeFiles/cmTC_135a5.dir/CMakeCXXCompilerABI.cpp.obj
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @C:\Users\shval\AppData\Local\Temp\nm64CF.tmp
-CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_135a5.exe
-	"C:\dev\programs\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_135a5.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_135a5.dir\objects1.rsp @C:\Users\shval\AppData\Local\Temp\nm652E.tmp
+Run Build Command(s):nmake /nologo cmTC_2c751\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_2c751.dir\build.make /nologo -L                  CMakeFiles\cmTC_2c751.dir\build
+Building CXX object CMakeFiles/cmTC_2c751.dir/CMakeCXXCompilerABI.cpp.obj
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE    -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles\cmTC_2c751.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\dev\programs\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCXXCompilerABI.cpp"
+Linking CXX executable cmTC_2c751.exe
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd    @CMakeFiles\cmTC_2c751.dir\objects1.rsp  -o cmTC_2c751.exe -Xlinker /implib:cmTC_2c751.lib -Xlinker /pdb:C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_2c751.pdb -Xlinker /version:0.0
 
 
 
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_eae92\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_eae92.dir\build.make /nologo -L                  CMakeFiles\cmTC_eae92.dir\build
+Building CXX object CMakeFiles/cmTC_eae92.dir/feature_tests.cxx.obj
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE    -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -o CMakeFiles\cmTC_eae92.dir\feature_tests.cxx.obj -c C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_eae92.exe
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd    @CMakeFiles\cmTC_eae92.dir\objects1.rsp  -o cmTC_eae92.exe -Xlinker /implib:cmTC_eae92.lib -Xlinker /pdb:C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_eae92.pdb -Xlinker /version:0.0  @CMakeFiles\cmTC_eae92.dir\linklibs.rsp
+
+
+
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: C:/dev/projects/cpp/transport_manager/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_8adee\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_8adee.dir\build.make /nologo -L                  CMakeFiles\cmTC_8adee.dir\build
+Building CXX object CMakeFiles/cmTC_8adee.dir/feature_tests.cxx.obj
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE    -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -o CMakeFiles\cmTC_8adee.dir\feature_tests.cxx.obj -c C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_8adee.exe
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd    @CMakeFiles\cmTC_8adee.dir\objects1.rsp  -o cmTC_8adee.exe -Xlinker /implib:cmTC_8adee.lib -Xlinker /pdb:C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_8adee.pdb -Xlinker /version:0.0  @CMakeFiles\cmTC_8adee.dir\linklibs.rsp
+
+
+
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_variable_templates

@@ -62,403 +62,326 @@ include CMakeFiles\transport-manager.dir\progress.make
 include CMakeFiles\transport-manager.dir\flags.make
 
 CMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.obj: ..\src\configuration\configuration.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/transport-manager.dir/src/configuration/configuration.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\configuration\configuration.cpp
-<<
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\configuration\configuration.cpp
 
 CMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/configuration/configuration.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\configuration\configuration.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/configuration/configuration.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\configuration\configuration.cpp.s /c C:\dev\projects\cpp\transport_manager\src\configuration\configuration.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.obj: ..\src\configuration\json\configuration_json.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/transport-manager.dir/src/configuration/json/configuration_json.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\configuration\json\configuration_json.cpp
-<<
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\configuration\json\configuration_json.cpp
 
 CMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/configuration/json/configuration_json.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\configuration\json\configuration_json.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/configuration/json/configuration_json.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\configuration\json\configuration_json.cpp.s /c C:\dev\projects\cpp\transport_manager\src\configuration\json\configuration_json.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.obj: ..\src\configuration\json\errors\configuration_json_errors.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/transport-manager.dir/src/configuration/json/errors/configuration_json_errors.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\configuration\json\errors\configuration_json_errors.cpp
-<<
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\configuration\json\errors\configuration_json_errors.cpp
 
 CMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/configuration/json/errors/configuration_json_errors.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\configuration\json\errors\configuration_json_errors.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/configuration/json/errors/configuration_json_errors.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\configuration\json\errors\configuration_json_errors.cpp.s /c C:\dev\projects\cpp\transport_manager\src\configuration\json\errors\configuration_json_errors.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.obj: ..\src\descriptions\description_tests.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/transport-manager.dir/src/descriptions/description_tests.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\descriptions\description_tests.cpp
-<<
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\descriptions\description_tests.cpp
 
 CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/descriptions/description_tests.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\descriptions\description_tests.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/descriptions/description_tests.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.s /c C:\dev\projects\cpp\transport_manager\src\descriptions\description_tests.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.obj: ..\src\descriptions\descriptions.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/transport-manager.dir/src/descriptions/descriptions.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions.cpp
-<<
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions.cpp
 
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/descriptions/descriptions.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/descriptions/descriptions.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.s /c C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.obj: ..\src\descriptions\descriptions_json_visitor.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/transport-manager.dir/src/descriptions/descriptions_json_visitor.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions_json_visitor.cpp
-<<
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions_json_visitor.cpp
 
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/descriptions/descriptions_json_visitor.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions_json_visitor.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/descriptions/descriptions_json_visitor.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.s /c C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions_json_visitor.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
+CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.obj: ..\src\descriptions\descriptions_parsers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/transport-manager.dir/src/descriptions/descriptions_parsers.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\descriptions\descriptions_parsers.cpp
+
+CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/descriptions/descriptions_parsers.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/descriptions/descriptions_parsers.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.obj: ..\src\descriptions\errors\descriptions_errors.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/transport-manager.dir/src/descriptions/errors/descriptions_errors.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\descriptions\errors\descriptions_errors.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/transport-manager.dir/src/descriptions/errors/descriptions_errors.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\descriptions\errors\descriptions_errors.cpp
 
 CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/descriptions/errors/descriptions_errors.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\descriptions\errors\descriptions_errors.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/descriptions/errors/descriptions_errors.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.s /c C:\dev\projects\cpp\transport_manager\src\descriptions\errors\descriptions_errors.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\json.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\json.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\json.cpp.obj: ..\src\json.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/transport-manager.dir/src/json.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\json.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\json.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/transport-manager.dir/src/json.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\json.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\json.cpp
 
 CMakeFiles\transport-manager.dir\src\json.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/json.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\json.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\json.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\json.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/json.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\json.cpp.s /c C:\dev\projects\cpp\transport_manager\src\json.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\main.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\main.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\main.cpp.obj: ..\src\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/transport-manager.dir/src/main.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\main.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\main.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/transport-manager.dir/src/main.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\main.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\main.cpp
 
 CMakeFiles\transport-manager.dir\src\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/main.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\main.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/main.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\main.cpp.s /c C:\dev\projects\cpp\transport_manager\src\main.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\map_drawer.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\map_drawer.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\map_drawer.cpp.obj: ..\src\map_drawer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/transport-manager.dir/src/map_drawer.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\map_drawer.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\map_drawer.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/transport-manager.dir/src/map_drawer.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\map_drawer.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\map_drawer.cpp
 
 CMakeFiles\transport-manager.dir\src\map_drawer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/map_drawer.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\map_drawer.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\map_drawer.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\map_drawer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/map_drawer.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\map_drawer.cpp.s /c C:\dev\projects\cpp\transport_manager\src\map_drawer.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.obj: ..\src\requests\errors\requests_errors.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/errors/requests_errors.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\requests\errors\requests_errors.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/errors/requests_errors.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\requests\errors\requests_errors.cpp
 
 CMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/requests/errors/requests_errors.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\requests\errors\requests_errors.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/requests/errors/requests_errors.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\requests\errors\requests_errors.cpp.s /c C:\dev\projects\cpp\transport_manager\src\requests\errors\requests_errors.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\requests.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\requests\requests.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\requests\requests.cpp.obj: ..\src\requests\requests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/requests.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\requests\requests.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\requests\requests.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/requests.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\requests\requests.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\requests\requests.cpp
 
 CMakeFiles\transport-manager.dir\src\requests\requests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/requests/requests.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\requests\requests.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\requests\requests.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\requests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/requests/requests.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\requests\requests.cpp.s /c C:\dev\projects\cpp\transport_manager\src\requests\requests.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.obj: ..\src\requests\requests_json_visitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/requests_json_visitor.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\requests\requests_json_visitor.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/requests_json_visitor.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\requests\requests_json_visitor.cpp
 
 CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/requests/requests_json_visitor.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\requests\requests_json_visitor.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/requests/requests_json_visitor.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.s /c C:\dev\projects\cpp\transport_manager\src\requests\requests_json_visitor.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.obj: ..\src\requests\requests_tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/requests_tests.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\requests\requests_tests.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/requests_tests.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\requests\requests_tests.cpp
 
 CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/requests/requests_tests.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\requests\requests_tests.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/requests/requests_tests.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.s /c C:\dev\projects\cpp\transport_manager\src\requests\requests_tests.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
+CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.obj: ..\src\requests\requests_types.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/transport-manager.dir/src/requests/requests_types.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\requests\requests_types.cpp
+
+CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/requests/requests_types.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/requests/requests_types.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\responses\responses.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\responses\responses.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\responses\responses.cpp.obj: ..\src\responses\responses.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/transport-manager.dir/src/responses/responses.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\responses\responses.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\responses\responses.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/transport-manager.dir/src/responses/responses.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\responses\responses.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\responses\responses.cpp
 
 CMakeFiles\transport-manager.dir\src\responses\responses.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/responses/responses.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\responses\responses.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\responses\responses.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\responses\responses.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/responses/responses.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\responses\responses.cpp.s /c C:\dev\projects\cpp\transport_manager\src\responses\responses.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.obj: ..\src\responses\responses_json_visitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/transport-manager.dir/src/responses/responses_json_visitor.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\responses\responses_json_visitor.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/transport-manager.dir/src/responses/responses_json_visitor.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\responses\responses_json_visitor.cpp
 
 CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/responses/responses_json_visitor.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\responses\responses_json_visitor.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/responses/responses_json_visitor.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.s /c C:\dev\projects\cpp\transport_manager\src\responses\responses_json_visitor.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\sphere.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\sphere.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\sphere.cpp.obj: ..\src\sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/transport-manager.dir/src/sphere.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\sphere.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\sphere.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/transport-manager.dir/src/sphere.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\sphere.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\sphere.cpp
 
 CMakeFiles\transport-manager.dir\src\sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/sphere.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\sphere.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\sphere.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/sphere.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\sphere.cpp.s /c C:\dev\projects\cpp\transport_manager\src\sphere.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\svg\svg.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\svg\svg.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\svg\svg.cpp.obj: ..\src\svg\svg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/transport-manager.dir/src/svg/svg.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\svg\svg.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\svg\svg.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/transport-manager.dir/src/svg/svg.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\svg\svg.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\svg\svg.cpp
 
 CMakeFiles\transport-manager.dir\src\svg\svg.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/svg/svg.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\svg\svg.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\svg\svg.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\svg\svg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/svg/svg.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\svg\svg.cpp.s /c C:\dev\projects\cpp\transport_manager\src\svg\svg.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\transport_manager.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\transport_manager.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\transport_manager.cpp.obj: ..\src\transport_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/transport-manager.dir/src/transport_manager.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\transport_manager.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\transport_manager.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/transport-manager.dir/src/transport_manager.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\transport_manager.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\transport_manager.cpp
 
 CMakeFiles\transport-manager.dir\src\transport_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/transport_manager.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\transport_manager.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\transport_manager.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\transport_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/transport_manager.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\transport_manager.cpp.s /c C:\dev\projects\cpp\transport_manager\src\transport_manager.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\transport_router.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\transport_router.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\transport_router.cpp.obj: ..\src\transport_router.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/transport-manager.dir/src/transport_router.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\transport_router.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\transport_router.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/transport-manager.dir/src/transport_router.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\transport_router.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\transport_router.cpp
 
 CMakeFiles\transport-manager.dir\src\transport_router.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/transport_router.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\transport_router.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\transport_router.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\transport_router.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/transport_router.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\transport_router.cpp.s /c C:\dev\projects\cpp\transport_manager\src\transport_router.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles\transport-manager.dir\src\utils\utils.cpp.obj: CMakeFiles\transport-manager.dir\flags.make
+CMakeFiles\transport-manager.dir\src\utils\utils.cpp.obj: CMakeFiles\transport-manager.dir\includes_CXX.rsp
 CMakeFiles\transport-manager.dir\src\utils\utils.cpp.obj: ..\src\utils\utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/transport-manager.dir/src/utils/utils.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\transport-manager.dir\src\utils\utils.cpp.obj /FdCMakeFiles\transport-manager.dir\ /FS -c C:\dev\projects\cpp\transport_manager\src\utils\utils.cpp
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/transport-manager.dir/src/utils/utils.cpp.obj"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\transport-manager.dir\src\utils\utils.cpp.obj -c C:\dev\projects\cpp\transport_manager\src\utils\utils.cpp
 
 CMakeFiles\transport-manager.dir\src\utils\utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transport-manager.dir/src/utils/utils.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\transport-manager.dir\src\utils\utils.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\projects\cpp\transport_manager\src\utils\utils.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles\transport-manager.dir\src\utils\utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transport-manager.dir/src/utils/utils.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\transport-manager.dir\src\utils\utils.cpp.s /c C:\dev\projects\cpp\transport_manager\src\utils\utils.cpp
-<<
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 # Object files for target transport-manager
 transport__manager_OBJECTS = \
@@ -468,6 +391,7 @@ transport__manager_OBJECTS = \
 "CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.obj" \
+"CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\json.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\main.cpp.obj" \
@@ -476,6 +400,7 @@ transport__manager_OBJECTS = \
 "CMakeFiles\transport-manager.dir\src\requests\requests.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.obj" \
+"CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\responses\responses.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.obj" \
 "CMakeFiles\transport-manager.dir\src\sphere.cpp.obj" \
@@ -493,6 +418,7 @@ transport__manager_EXTERNAL_OBJECTS =
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\descriptions\description_tests.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\descriptions\descriptions.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\descriptions\descriptions_json_visitor.cpp.obj
+..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\descriptions\descriptions_parsers.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\descriptions\errors\descriptions_errors.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\json.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\main.cpp.obj
@@ -501,6 +427,7 @@ transport__manager_EXTERNAL_OBJECTS =
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\requests\requests.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\requests\requests_json_visitor.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\requests\requests_tests.cpp.obj
+..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\requests\requests_types.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\responses\responses.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\responses\responses_json_visitor.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\sphere.cpp.obj
@@ -509,11 +436,10 @@ transport__manager_EXTERNAL_OBJECTS =
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\transport_router.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\src\utils\utils.cpp.obj
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\build.make
+..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\linklibs.rsp
 ..\bin\transport-manager.exe: CMakeFiles\transport-manager.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable ..\bin\transport-manager.exe"
-	"C:\dev\programs\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\transport-manager.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\transport-manager.dir\objects1.rsp @<<
- /out:..\bin\transport-manager.exe /implib:transport-manager.lib /pdb:C:\dev\projects\cpp\transport_manager\bin\transport-manager.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
-<<
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\dev\projects\cpp\transport_manager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable ..\bin\transport-manager.exe"
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\Llvm\bin\CLANG_~1.EXE -fuse-ld=lld-link -nostartfiles -nostdlib -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   @CMakeFiles\transport-manager.dir\objects1.rsp  -o ..\bin\transport-manager.exe -Xlinker /implib:transport-manager.lib -Xlinker /pdb:C:\dev\projects\cpp\transport_manager\bin\transport-manager.pdb -Xlinker /version:0.0  @CMakeFiles\transport-manager.dir\linklibs.rsp
 
 # Rule to build all files generated by this target.
 CMakeFiles\transport-manager.dir\build: ..\bin\transport-manager.exe
